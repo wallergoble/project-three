@@ -1,5 +1,10 @@
-# Story Book App(change name)
+# Story Book App
 
+Production Link: 
+
+<a href="https://trello.com/b/BC1sJOOj/wdi-project-3">
+Trello Board
+</a>
 ## Contributers
 
 * Christina Parkhurst
@@ -21,4 +26,6 @@
 ## Mission Statement
 
 Our app is centered around children and an adult companion building a story through an interactive Angular interface. 
+
+## Git methodology
 

@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var Story     = require('./story');
+var Story    = require('./story');
+var Author   = require('./author');
 
 var UserSchema = new mongoose.Schema({
   local : {
@@ -9,7 +10,7 @@ var UserSchema = new mongoose.Schema({
     email    : String,
     password : String
   },
-  stories : [Story.schema]
+  authors : [Author.schema]
 });
 
 UserSchema.methods.encrypt = function(password) {

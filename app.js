@@ -18,7 +18,7 @@ if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
 }
 else {
-  mongoose.connect('mongodb://localhost/mean-movies');
+  mongoose.connect('mongodb://localhost/stories');
 }
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-// app.use('/stories', stories);
+app.use('/api/stories', stories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

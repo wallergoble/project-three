@@ -47,8 +47,8 @@ Story.remove({})
 })
 .then(function(allStories) {
   console.log('Printing all stories:');
-  allStories.forEach(function(movie) {
-    console.log(movie);
+  allStories.forEach(function(story) {
+    console.log(story);
   });
   quit();
 })

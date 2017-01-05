@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var Story = require('../models/story.js');
+var Story = require('../models/story');
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -13,7 +13,8 @@ function makeError(res, message, status) {
 // INDEX
 // get all the story and return as JSON data
 router.get('/', function(req, res, next) {
-  Story.find({}).sort('-createdAt')
+  console.log('about to find some stories...');
+  Story.find().sort('-createdAt')
   .then(function(stories) {
     res.json({ stories: stories });
   })
@@ -22,28 +23,38 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// // SHOW
-// // return data for a single movie as JSON
-// router.get('/:id', function(req, res, next) {
-//   Movie.findById(req.params.id)
-//   .then(function(movie) {
-//     if (!movie) return next(makeError(res, 'Document not found', 404));
-//     res.json({ movie: movie });
-//   })
-//   .catch(function(err) {
-//     return next(err);
-//   });
-// });
+// SHOW
+// return data for a single story as JSON
+router.get('/:id', function(req, res, next) {
+  Story.findById(req.params.id)
+  .then(function(story) {
+    if (!story) return next(makeError(res, 'Document not found', 404));
+    res.json({ story: story });
+  })
+  .catch(function(err) {
+    return next(err);
+  });
+});
 
-// // CREATE
-// router.post('/', function(req, res, next) {
-//   Movie.create(req.body)
-//   .then(function(savedMovie) {
-//     res.json({ movie: savedMovie });
-//   })
-//   .catch(function(err) {
-//     return next(err);
-//   });
-// });
+// CREATE
+router.post('/', function(req, res, next) {
+  Story.create(req.body)
+  .then(function(savedStory) {
+    res.json({ story: savedStory });
+  })
+  .catch(function(err) {
+    return next(err);
+  });
+});
 
-// module.exports = router;
+// DELETE
+router.delete('/:id', function(req, res) {
+  Story.delete(req.params.id)
+  .then(function(story) {
+    res.json( {story: story});
+  });
+
+});
+
+
+module.exports = router;

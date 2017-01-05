@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var Story = require('../models/story.js');
+var Story = require('../models/story');
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -15,6 +15,7 @@ function makeError(res, message, status) {
 router.get('/', function(req, res, next) {
   Story.find({}).sort('-createdAt')
   .then(function(stories) {
+    console.log(stories);
     res.json({ stories: stories });
   })
   .catch(function(err) {
@@ -46,4 +47,4 @@ router.get('/', function(req, res, next) {
 //   });
 // });
 
-// module.exports = router;
+module.exports = router;

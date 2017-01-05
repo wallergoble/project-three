@@ -4,9 +4,9 @@ myApp.config(function($stateProvider) {
 	var storyState = {
 		name: 'story',
 		url: '/story',
-		templateUrl: 'js/stories/story.html',
+		template: '<h1> hello from story template</h1>',
 		controller: 'storyCtrl'
 	}
-	
+
 	$stateProvider.state(storyState);
 });

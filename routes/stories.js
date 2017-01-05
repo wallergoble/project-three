@@ -15,9 +15,7 @@ function makeError(res, message, status) {
 router.get('/', function(req, res, next) {
   console.log('about to find some stories...');
   Story.find().sort('-createdAt')
-
   .then(function(stories) {
-
     res.json({ stories: stories });
   })
   .catch(function(err) {
@@ -25,28 +23,28 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// // SHOW
-// // return data for a single movie as JSON
-// router.get('/:id', function(req, res, next) {
-//   Movie.findById(req.params.id)
-//   .then(function(movie) {
-//     if (!movie) return next(makeError(res, 'Document not found', 404));
-//     res.json({ movie: movie });
-//   })
-//   .catch(function(err) {
-//     return next(err);
-//   });
-// });
+// SHOW
+// return data for a single story as JSON
+router.get('/:id', function(req, res, next) {
+  Story.findById(req.params.id)
+  .then(function(story) {
+    if (!story) return next(makeError(res, 'Document not found', 404));
+    res.json({ story: story });
+  })
+  .catch(function(err) {
+    return next(err);
+  });
+});
 
-// // CREATE
-// router.post('/', function(req, res, next) {
-//   Movie.create(req.body)
-//   .then(function(savedMovie) {
-//     res.json({ movie: savedMovie });
-//   })
-//   .catch(function(err) {
-//     return next(err);
-//   });
-// });
+// CREATE
+router.post('/', function(req, res, next) {
+  Story.create(req.body)
+  .then(function(savedStory) {
+    res.json({ story: savedStory });
+  })
+  .catch(function(err) {
+    return next(err);
+  });
+});
 
 module.exports = router;

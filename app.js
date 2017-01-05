@@ -1,5 +1,5 @@
-var express = require('express');
 var path = require('path');
+var express = require('express');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -10,7 +10,7 @@ mongoose.Promise = require('bluebird');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var stories = require('./routes/stories')
 var app = express();
 
 // Connect to database
@@ -43,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+// app.use('/stories', stories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -47,4 +47,14 @@ router.post('/', function(req, res, next) {
   });
 });
 
+// DELETE
+router.delete('/:id', function(req, res) {
+  Story.delete(req.params.id)
+  .then(function(story) {
+    res.json( {story: story});
+  });
+
+});
+
+
 module.exports = router;

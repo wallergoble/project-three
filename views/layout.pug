@@ -1,15 +1,12 @@
-doctype html
-html(ng-app="storyBook")
+html
 	head
-	title= title
-	link(rel='stylesheet', href='/stylesheets/style.css')
-	body
-	nav
-	button
-	a(ui-sref='stories') Stories
-	main(ui-view='')
-	block content
-	script(src='/angular/angular.min.js', charset='utf-8')
-	script(src='/angular-ui-router/release/angular-ui-router.min.js', charset='utf-8')
-	script(src='/js/client.js')
-	script(src='js/stories/story.js')
+		title title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body(ng-app='storyBook')
+		a(ui-sref='story') Stories:
+		ui-view
+		block content
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js')
+		script(src='/js/client.js')
+		script(src='/js/stories/story.js')

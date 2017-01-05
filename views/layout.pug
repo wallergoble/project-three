@@ -1,13 +1,7 @@
 doctype html
 html
   head
-    title= My Storie Books
+    title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-	script(src='/angular.min.js')
-	script(src='/angular-ui-router.min.js')
-	script(src='js/client.js')
-	script(src='js/stories/story.js')
-  body(ng-app='storyBook')
-	a(ui-sref='story', ui-sref-active='active') Stories:
-	ui-view
+  body
     block content

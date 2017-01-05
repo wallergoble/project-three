@@ -51,7 +51,7 @@ router.post('/', function(req, res, next) {
 router.delete('/:id', function(req, res) {
   Story.delete(req.params.id)
   .then(function(story) {
-    res.json( {story: story});
+    res.send( {story: story});
   });
 
 });

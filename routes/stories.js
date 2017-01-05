@@ -47,6 +47,24 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+// UPDATE
+router.put('/:id', function(req, res, next) {
+  Story.findById(req.params.id)
+  .then(function(story) {
+    if (!story) return next(makeError(res, 'Document not found', 404));
+    // if (!req.user._id.equals(story.user)) return next(makeError(res, 'Unauthorized', 401));
+    story.name = req.body.name;
+    story.animal = req.body.animal;
+    story.place = req.body.place;
+    return story.save();
+  })
+  .then(function(story) {
+    res.json(story);
+  }, function(err) {
+    return next(err);
+  });
+});
+
 // DELETE
 router.delete('/:id', function(req, res, next) {
    console.log('Trying to delete story with id:', req.params.id);

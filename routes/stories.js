@@ -13,9 +13,11 @@ function makeError(res, message, status) {
 // INDEX
 // get all the story and return as JSON data
 router.get('/', function(req, res, next) {
-  Story.find({}).sort('-createdAt')
+  console.log('about to find some stories...');
+  Story.find().sort('-createdAt')
+
   .then(function(stories) {
-    console.log(stories);
+
     res.json({ stories: stories });
   })
   .catch(function(err) {

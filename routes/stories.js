@@ -23,6 +23,17 @@ router.get('/', function(req, res, next) {
   });
 });
 
+// CREATE
+router.post('/', function(req, res, next) {
+  Story.create(req.body)
+  .then(function(savedStory) {
+    res.json({ story: savedStory });
+  })
+  .catch(function(err) {
+    return next(err);
+  });
+});
+
 // SHOW
 // return data for a single story as JSON
 router.get('/:id', function(req, res, next) {
@@ -36,24 +47,34 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-// CREATE
-router.post('/', function(req, res, next) {
-  Story.create(req.body)
-  .then(function(savedStory) {
-    res.json({ story: savedStory });
+// UPDATE
+router.put('/:id', function(req, res, next) {
+  Story.findById(req.params.id)
+  .then(function(story) {
+    if (!story) return next(makeError(res, 'Document not found', 404));
+    // if (!req.user._id.equals(story.user)) return next(makeError(res, 'Unauthorized', 401));
+    story.name = req.body.name;
+    story.animal = req.body.animal;
+    story.place = req.body.place;
+    return story.save();
   })
-  .catch(function(err) {
+  .then(function(story) {
+    res.json(story);
+  }, function(err) {
     return next(err);
   });
 });
 
 // DELETE
-router.delete('/:id', function(req, res) {
-  Story.delete(req.params.id)
-  .then(function(story) {
-    res.send( {story: story});
-  });
-
+router.delete('/:id', function(req, res, next) {
+   console.log('Trying to delete story with id:', req.params.id);
+   Story.findByIdAndRemove(req.params.id, function(err) {
+       if(err){
+           return next(err);
+       } else {
+           res.redirect('/');
+       }
+   });
 });
 
 

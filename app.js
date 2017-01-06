@@ -10,7 +10,7 @@ mongoose.Promise = require('bluebird');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var stories = require('./routes/stories')
+var stories = require('./routes/stories');
 var app = express();
 
 // Connect to database

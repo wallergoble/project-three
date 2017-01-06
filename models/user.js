@@ -10,7 +10,7 @@ var UserSchema = new mongoose.Schema({
     lastName : String,
     email    : String,
     password : String
-  },
+  }
   // authors : [Author.schema]
 });
 //

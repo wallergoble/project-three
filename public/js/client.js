@@ -13,12 +13,12 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		template: `
 		<h1> Welcome to our app </h1>
 		<login></login>
-		<p>If you haven't signed up yet, <a ui-sref="/signup"> click here </a> to sign up</p>
+		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
 		`
 	})
 	.state('signup', {
 		url: '/signup',
-		template: '<signup></signup>'
+		template: '<h1> hi </h1><signup></signup>'
 	})
 	.state('storyIndex', {
 		url: '/my-library',

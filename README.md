@@ -22,6 +22,7 @@ Trello Board
 * HTML5
 * CSS3
 * Heroku
+* Passport
 
 ## Mission Statement
 

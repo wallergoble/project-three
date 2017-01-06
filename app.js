@@ -6,7 +6,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+var passportLocalMongoose = require('passport-local-mongoose');
+var User = require('./models/user');
+
 mongoose.Promise = require('bluebird');
+
+
+//ROUTES
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -43,6 +51,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
+//PASSPORT CONFIG
+app.use(require('express-session')({
+    secret: 'I love cats too',
+    resave: false,
+    saveUninitialized: false
+
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+// This middleware will allow us to use the currentUser in our views and routes.
+app.use(function (req, res, next) {
+    global.currentUser = req.user;
+    next();
+});
+
+//ROUTES
 app.use('/', index);
 app.use('/users', users);
 app.use('/api/stories', stories);

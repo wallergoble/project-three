@@ -1,0 +1,29 @@
+<div class="container">
+    <form ng-submit="$ctrl.create()">
+        <h1> Who is in your story? <h1>
+        <div>
+            <label for="name"></label>
+            <input type="text" 
+                name="name"
+                placeholder="Matilda"
+                ng-model="$ctrl.story.name">
+        </div>
+        <h1> What are they? <h1>
+        <div>
+            <label for="animal"></label>
+            <input type="text" 
+                animal="animal"
+                placeholder="Slug"
+                ng-model="$ctrl.story.animal">
+        </div>
+        <h1> Where are they going? <h1>
+        <div>
+            <label for="place"></label>
+            <input type="text" 
+                place="place"
+                placeholder="Greece"
+                ng-model="$ctrl.story.place">
+        </div>
+        <button type="submit">Submit!</button>
+    </form>
+</div>

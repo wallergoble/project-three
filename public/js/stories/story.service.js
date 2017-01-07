@@ -1,4 +1,5 @@
 myApp.service('storyService', function($http) {
+  console.log('hello from Story Service!');
 
   // Get all of the stories
   this.getStories = function() {

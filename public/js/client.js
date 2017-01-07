@@ -18,7 +18,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 	.state('signup', {
 		url: '/signup',
-		template: '<h1> hi </h1><signup></signup>'
+		template: '<signup></signup>'
 	})
 	.state('storyIndex', {
 		url: '/my-library',

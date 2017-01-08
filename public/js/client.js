@@ -99,10 +99,32 @@ myApp.controller('showCtrl', function(storyService, $stateParams) {
 });
 
 // Edit Story Controller
-myApp.controller('editCtrl', function(storyService, $stateParams) {
-			console.log('editCtrl is alive!');
-			console.log(storyService.test);
+myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
+		// put a helpful comment to why we did this
+		// this.story = null;
+
+		this.show = function() {
+			$state.go('storyShow', { id: this.story._id });
+		};
+
+		this.save = function() {
+			storyService.update(this.story)
+			.then( res => {
+				$state.go('storyIndex');
+			});
+		}
+
+		storyService.getStory($stateParams.id)
+		.then( res => {
+			console.log('went and got a story: ', res.data);
+			this.story = res.data;
+			console.log('this is this.story inside the function', this.story);
 		});
+		setTimeout(function() {
+ 		console.log('this is this.story outside the function after 5 seconds', this.story);
+	}, 1000)
+
+});
 
 
 // const myApp = angular.module('storyBook', ['ui.router']);

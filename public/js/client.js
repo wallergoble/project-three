@@ -62,14 +62,23 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 });
 // Index controller
 myApp.controller('indexCtrl', function(storyService, $stateParams) {
-			console.log('indexCtrl is alive!');
-			console.log(storyService.test);
+	this.stories = null;
+	this.getStories = function() {
+		storyService.getStories()
+		.then( res => {
+			this.stories = res.data
 		});
-
+	};
+	this.getStories();
+});
 // New Story Controller
 myApp.controller('newCtrl', function(storyService, $stateParams) {
-			console.log('newCtrl is alive!');
-			console.log(storyService.test);
+	this.story = {
+		this.name =  null,
+		this.animal =  null,
+		this.place =  null
+	};
+
 		});
 
 // Show Story Controller

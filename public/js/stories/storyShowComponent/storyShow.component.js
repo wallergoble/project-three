@@ -1,5 +1,3 @@
-console.log('hello from outside the storyShow component');
-
 myApp.component('storyShow', {
   templateUrl: 'js/stories/storyShowComponent/storyShow.html',
   controller: function(storyService, $stateParams) {

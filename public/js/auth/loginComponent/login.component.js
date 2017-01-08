@@ -3,5 +3,4 @@ myApp.component('login', {
   controller: function() {
     console.log('hello from login components controller');
   }
-
 });

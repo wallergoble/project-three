@@ -1,11 +1,22 @@
+<nav>
+     <ul>
+     <style>
+         a {
+             margin: 10px;
+         }
+     </style>
+             <a ui-sref="storyNew">New</a>
+             <a ui-sref="storyIndex">Index</a>
+             <a ui-sref="storyShow">Show</a>
+             <a ui-sref="storyEdit">Edit</a>
+             <a ui-sref="signup">Sign Up</a>
+     </ul>
+</nav>
+
 <h3>SHOW</h3>
-  <p><b>Name: </b>{{ $ctrl.story.name }}</p>
-  <p><b>ID: </b>{{ $ctrl.story._id }}</p>
-  <p><b>Completed: </b>
-    <span ng-show="$ctrl.todo.completed" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-    <span ng-hide="$ctrl.todo.completed" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-  </p>
-  <p><b>Created: </b>{{ $ctrl.story.updatedAt | date : "medium" }}</p>
-  <p><b>Last Updated: </b>{{ $ctrl.story.createdAt | date : "medium" }}</p>
-  <a ui-sref="my-library" class="btn btn-primary">Back</a>
-  <a ng-click="$ctrl.edit(story)" class="btn btn-warning">Edit</a>
+  <p><strong>Name: </strong>{{ $ctrl.story.name }}</p>
+  <p><strong>ID: </strong>{{ $ctrl.story._id }}</p>
+  <p><strong>Created: </strong>{{ $ctrl.story.updatedAt | date : "medium" }}</p>
+  <p><strong>Last Updated: </strong>{{ $ctrl.story.createdAt | date : "medium" }}</p>
+  <a ui-sref="storyIndex">Back</a>
+  <!-- <a ng-click="$ctrl.edit(story)" >Edit</a> -->

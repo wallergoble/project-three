@@ -72,20 +72,31 @@ myApp.controller('indexCtrl', function(storyService, $stateParams) {
 	this.getStories();
 });
 // New Story Controller
-myApp.controller('newCtrl', function(storyService, $stateParams) {
+myApp.controller('newCtrl', function(storyService, $state) {
 	this.story = {
-		this.name =  null,
-		this.animal =  null,
-		this.place =  null
+		name     :  '',
+		animal   :  '',
+		place    :  ''
 	};
-
+	this.save = function() {
+		storyService.create(this.story)
+		.then( res => {
+			$state.go('storyIndex');
 		});
+	};
+});
 
 // Show Story Controller
 myApp.controller('showCtrl', function(storyService, $stateParams) {
-			console.log('showCtrl is alive!');
-			console.log(storyService.test);
-		});
+	this.story = null;
+
+	storyService.getStory($stateParams.id)
+	.then( res => {
+		console.log(res.data);
+		this.story = res.data;
+	});
+	console.log(this.story);
+});
 
 // Edit Story Controller
 myApp.controller('editCtrl', function(storyService, $stateParams) {

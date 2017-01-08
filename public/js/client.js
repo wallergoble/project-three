@@ -11,6 +11,21 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('index', {
 		url: '/index',
 		template: `
+		<nav>
+				 <ul>
+				 <style>
+						 a {
+								 margin: 10px;
+						 }
+				 </style>
+								 <a ui-sref="storyNew">New</a>
+								 <a ui-sref="storyIndex">Index</a>
+								 <a ui-sref="storyShow">Show</a>
+								 <a ui-sref="storyEdit">Edit</a>
+								 <a ui-sref="signup">Sign Up</a>
+				 </ul>
+		</nav>
+
 		<h1> Welcome to our app </h1>
 		<login></login>
 		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
@@ -22,18 +37,90 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 	.state('storyIndex', {
 		url: '/my-library',
-		template: '<storyIndex></storyIndex>'
+		templateUrl: 'js/stories/storyIndexComponent/storyIndex.html',
+		controller: 'indexCtrl',
+		controllerAs: '$ctrl'
 	})
 	.state('storyNew', {
 		url: '/new',
-		template: '<storyNew></storyNew>'
+		templateUrl: 'js/stories/storyNewComponent/storyNew.html',
+		controller: 'newCtrl',
+		controllerAs: '$ctrl'
 	})
 	.state('storyShow', {
 		url: '/show/:id',
-		template: '<storyShow></storyShow>'
+		templateUrl: 'js/stories/storyShowComponent/storyShow.html',
+		controller: 'showCtrl',
+    controllerAs: '$ctrl'
 	})
 	.state('storyEdit', {
 		url: '/edit/:id',
-		template: '<storyEdit></storyEdit>'
+		templateUrl: 'js/stories/storyEditComponent/storyEdit.html',
+		controller: 'editCtrl',
+		controllerAs: '$ctrl'
 	});
 });
+// Index controller
+myApp.controller('indexCtrl', function(storyService, $stateParams) {
+			console.log('indexCtrl is alive!');
+			console.log(storyService.test);
+		});
+
+// New Story Controller
+myApp.controller('newCtrl', function(storyService, $stateParams) {
+			console.log('newCtrl is alive!');
+			console.log(storyService.test);
+		});
+
+// Show Story Controller
+myApp.controller('showCtrl', function(storyService, $stateParams) {
+			console.log('showCtrl is alive!');
+			console.log(storyService.test);
+		});
+
+// Edit Story Controller
+myApp.controller('editCtrl', function(storyService, $stateParams) {
+			console.log('editCtrl is alive!');
+			console.log(storyService.test);
+		});
+
+
+// const myApp = angular.module('storyBook', ['ui.router']);
+//
+// myApp.config(function($stateProvider, $urlRouterProvider) {
+//
+// 	// If the user goes astray, redirect to /home
+// 	$urlRouterProvider.otherwise('/index');
+//
+// 	$stateProvider
+// 	.state('index', {
+// 		url: '/index',
+// 		template: `
+// 		<h1> Welcome to our app </h1>
+// 		<login></login>
+// 		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
+// 		`
+// 	})
+// 	.state('signup', {
+// 		url: '/signup',
+// 		template: '<signup></signup>'
+// 	})
+// 	.state('storyIndex', {
+// 		url: '/my-library',
+// 		template: '<storyIndex></storyIndex>',
+// 	})
+// 	.state('storyNew', {
+// 		url: '/new',
+// 		template: '<storyNew></storyNew>'
+// 	})
+// 	.state('storyShow', {
+// 		url: '/show/:id',
+// 		templateUrl: 'js/stories/storyShowComponent/storyShow.html',
+// 		controller: 'showCtrl',
+//     controllerAs: '$ctrl'
+// 	})
+// 	.state('storyEdit', {
+// 		url: '/edit/:id',
+// 		template: '<storyEdit></storyEdit>'
+// 	});
+// });

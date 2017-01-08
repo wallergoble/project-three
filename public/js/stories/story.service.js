@@ -1,5 +1,5 @@
 myApp.service('storyService', function($http) {
-
+  this.test = 5;
   // Get all of the stories
   this.getStories = function() {
     return $http.get('/api/stories');

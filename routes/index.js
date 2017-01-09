@@ -11,10 +11,9 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/signup', function(req, res) {
-    User.register(new User({ firstName: req.body.firstName,
-                           lastName: req.body.lastName,
-                           email: req.body.email }),
-                                 req.body.password, function(err, account) {
+    User.register(new User({username: req.body.username }),
+                            req.body.password,
+                            function(err, account) {
             if (err) {
                 return res.status(500).json({
                     err: err

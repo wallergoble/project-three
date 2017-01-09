@@ -15,7 +15,7 @@ myApp.component('login', {
               })
                   .then(() => {
                   // Logged in, redirect to todos
-                  this.$state.go('stories');
+                  this.$state.go('signup');
           })
           .catch(err => {
                   this.errors.login = err.message;

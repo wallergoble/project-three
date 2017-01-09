@@ -79,8 +79,10 @@ myApp.controller('newCtrl', function(storyService, $state) {
 		place    :  ''
 	};
 	this.save = function() {
+		console.log('about to save some shit...');
 		storyService.create(this.story)
 		.then( res => {
+			console.log('this story got sent: ', this.story);
 			$state.go('storyIndex');
 		});
 	};
@@ -89,7 +91,6 @@ myApp.controller('newCtrl', function(storyService, $state) {
 // Show Story Controller
 myApp.controller('showCtrl', function(storyService, $stateParams) {
 	this.story = null;
-
 	storyService.getStory($stateParams.id)
 	.then( res => {
 		console.log(res.data);
@@ -101,7 +102,7 @@ myApp.controller('showCtrl', function(storyService, $stateParams) {
 // Edit Story Controller
 myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
 		// put a helpful comment to why we did this
-		// this.story = null;
+		this.story = null;
 
 		this.show = function() {
 			$state.go('storyShow', { id: this.story._id });

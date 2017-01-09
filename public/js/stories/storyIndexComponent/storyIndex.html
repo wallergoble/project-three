@@ -14,7 +14,11 @@
  {{$ctrl.stories}}
 <ul>
   <li ng-repeat="story in $ctrl.stories">
-    <p> {{story.name}} </p>
+    <article>
+      <a ng-click="$ctrl.show(story)" > {{story.title}} </a>
+      <button ng-click="$ctrl.edit(story)">Edit</button>
+      <button ng-click="alert('this works')">Delete</button>
+    </article>
   </li>
 </ul>
 <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>

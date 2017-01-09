@@ -11,10 +11,8 @@
     </div>
 </nav>
 
-<h3>SHOW</h3>
-  <p><strong>Name: </strong>{{ $ctrl.story.name }}</p>
-  <p><strong>ID: </strong>{{ $ctrl.story._id }}</p>
-  <p><strong>Created: </strong>{{ $ctrl.story.updatedAt | date : "medium" }}</p>
-  <p><strong>Last Updated: </strong>{{ $ctrl.story.createdAt | date : "medium" }}</p>
-  <a ui-sref="storyIndex">Back</a>
-  <!-- <a ng-click="$ctrl.edit(story)" >Edit</a> -->
+<h3>{{$ctrl.story.title}} </h3>
+
+<article> {{$ctrl.story.name}}, the {{$ctrl.story.animal}}, went to the {{$ctrl.story.place}} </article>
+<br>
+<a ui-sref="storyIndex">Back</a>

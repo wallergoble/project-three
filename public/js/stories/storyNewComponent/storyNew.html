@@ -21,6 +21,7 @@
            <label for="name"></label>
            <input type="text"
                name="name"
+               id="name"
                placeholder="Matilda"
                ng-model="$ctrl.story.name">
        </div>
@@ -28,7 +29,8 @@
        <div>
            <label for="animal"></label>
            <input type="text"
-               animal="animal"
+               name="animal"
+               id="animal"
                placeholder="Slug"
                ng-model="$ctrl.story.animal">
        </div>
@@ -36,10 +38,12 @@
        <div>
            <label for="place"></label>
            <input type="text"
-               place="place"
+               name="place"
+               id="place"
                placeholder="Greece"
                ng-model="$ctrl.story.place">
        </div>
-       <button type="submit">Save!</button>
+       <br>
+       <input type="submit" value="Save Story">
    </form>
 </div>

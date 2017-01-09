@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 var Story = require('../models/story');
 
 function makeError(res, message, status) {
@@ -23,11 +24,19 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// CREATE
+// NEW
 router.post('/', function(req, res, next) {
-  Story.create(req.body)
+  console.log('hello from post router');
+  let story = new Story({
+    name: req.body.name,
+    animal: req.body.animal,
+    place: req.body.place
+  });
+  story.save()
   .then(function(savedStory) {
-    res.json(savedStory);
+    console.log(savedStory);
+    console.log(story);
+    res.json(story);
   })
   .catch(function(err) {
     return next(err);

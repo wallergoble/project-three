@@ -46,15 +46,28 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	});
 });
 // Index controller
-myApp.controller('indexCtrl', function(storyService, $stateParams) {
+myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
+	// We set this value to be able to access the result of getStories
 	this.stories = null;
+
 	this.getStories = function() {
 		storyService.getStories()
 		.then( res => {
 			this.stories = res.data
 		});
 	};
+	// We have to call this function to render stories on initial view rendering
 	this.getStories();
+
+	// Helper function to link index and individual show routes
+	this.show = function(story) {
+		$state.go('storyShow', { id: story._id });
+	};
+
+	// Helper function to link to edit
+	this.edit = function(story) {
+		$state.go('storyEdit', { id: story._id });
+	};
 });
 // New Story Controller
 myApp.controller('newCtrl', function(storyService, $state) {
@@ -64,8 +77,10 @@ myApp.controller('newCtrl', function(storyService, $state) {
 		place    :  ''
 	};
 	this.save = function() {
+		console.log('about to save some shit...');
 		storyService.create(this.story)
 		.then( res => {
+			console.log('this story got sent: ', this.story);
 			$state.go('storyIndex');
 		});
 	};
@@ -74,7 +89,6 @@ myApp.controller('newCtrl', function(storyService, $state) {
 // Show Story Controller
 myApp.controller('showCtrl', function(storyService, $stateParams) {
 	this.story = null;
-
 	storyService.getStory($stateParams.id)
 	.then( res => {
 		console.log(res.data);
@@ -86,7 +100,7 @@ myApp.controller('showCtrl', function(storyService, $stateParams) {
 // Edit Story Controller
 myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
 		// put a helpful comment to why we did this
-		// this.story = null;
+		this.story = null;
 
 		this.show = function() {
 			$state.go('storyShow', { id: this.story._id });

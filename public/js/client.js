@@ -109,7 +109,7 @@ myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
 		this.save = function() {
 			storyService.update(this.story)
 			.then( res => {
-				$state.go('storyIndex');
+				$state.go('storyShow', { id: this.story._id });
 			});
 		}
 

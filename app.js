@@ -4,9 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var methodOverride = require('method-override');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+var passportLocalMongoose = require('passport-local-mongoose');
+var User = require('./models/user');
+
 mongoose.Promise = require('bluebird');
+
+
+//ROUTES
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -39,10 +47,56 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
+//PASSPORT CONFIG
+app.use(require('express-session')({
+    secret: 'I love cats too',
+    resave: false,
+    saveUninitialized: false
+
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+// passport.use(new LocalStrategy({
+//         usernameField: 'email'
+//     },
+//     function(username, password, done) {
+//         User.findOne({ email: username }, function (err, user) {
+//             if (err) { return done(err); }
+//             // Return if user not found in database
+//             if (!user) {
+//                 return done(null, false, {
+//                     message: 'User not found'
+//                 });
+//             }
+//             // Return if password is wrong
+//             if (!user.validPassword(password)) {
+//                 return done(null, false, {
+//                     message: 'Password is wrong'
+//                 });
+//             }
+//             // If credentials are correct, return the user object
+//             return done(null, user);
+//         });
+//     }
+// ));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+// This middleware will allow us to use the currentUser in our views and routes.
+app.use(function (req, res, next) {
+    global.currentUser = req.user;
+    next();
+});
+
+//ROUTES
 app.use('/', index);
 app.use('/users', users);
 app.use('/api/stories', stories);

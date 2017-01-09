@@ -61,15 +61,24 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	});
 });
 // Index controller
-myApp.controller('indexCtrl', function(storyService, $stateParams) {
+myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
+	// We set this value to be able to access the result of getStories
 	this.stories = null;
+
 	this.getStories = function() {
 		storyService.getStories()
 		.then( res => {
 			this.stories = res.data
 		});
 	};
+	// We have to call this function to render stories on initial view rendering
 	this.getStories();
+
+	// Helper function to link index and individual show routes
+	this.show = function(story) {
+		console.log(story);
+		$state.go('storyShow', { id: story._id });
+	};
 });
 // New Story Controller
 myApp.controller('newCtrl', function(storyService, $state) {

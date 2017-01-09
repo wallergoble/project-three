@@ -16,6 +16,7 @@
  {{$ctrl.stories}}
 <ul>
   <li ng-repeat="story in $ctrl.stories">
-    <p> {{story.name}} </p>
+    <p> <a ng-click="$ctrl.show(story)" > {{story.title}} </a> </p>
+    <!-- <p> <a ui-sref="storyShow" ui-sref-opts="{ id: $ctrl.story._id }"> {{story.title}} </a> </p> -->
   </li>
 </ul>

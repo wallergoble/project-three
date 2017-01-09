@@ -4,7 +4,7 @@
 
 <fieldset ng-disabled="$ctrl.isSubmitting">
 
-    <form name="form" ng-submit='$ctrl.login(form)' novalidate>
+    <form name="form" ng-submit='$ctrl.signup(form)' novalidate>
 
         <div class="form-group" ng-class="{ 'has-success': form.firstName.$valid && $ctrl.submitted,
                                               'has-error': form.firstName.$invalid && $ctrl.submitted }">

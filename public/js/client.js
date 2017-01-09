@@ -11,21 +11,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('index', {
 		url: '/index',
 		template: `
-		
-		<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Home</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a ui-sref="storyNew">New</a></li>
-        <li><a ui-sref="storyIndex">Index</a></li>
-        <li><a ui-sref="storyShow">Show</a></li>
-        <li><a ui-sref="storyEdit">Edit</a></li>
-        <li><a ui-sref="signup">Sign Up</a></li>
-      </ul>
-    </div>
-  </nav>
-
-		<h1> Welcome to our app </h1>
+	<h1> My Story Books </h1>
 		<login></login>
 		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
 		`

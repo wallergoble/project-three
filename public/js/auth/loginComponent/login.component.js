@@ -10,12 +10,12 @@ myApp.component('login', {
 
           if (form.$valid) {
               this.Auth.login({
-                  email: this.user.email,
+                  username: this.user.username,
                   password: this.user.password
               })
                   .then(() => {
-                  // Logged in, redirect to todos
-                  this.$state.go('signup');
+                  // Logged in, redirect to stories
+                  $state.go('storyIndex');
           })
           .catch(err => {
                   this.errors.login = err.message;

@@ -1,4 +1,5 @@
 myApp.component('signup', {
+<<<<<<< HEAD
     templateUrl: 'js/auth/signupComponent/signup.html',
     controller: function(Auth, $state) {
         this.Auth = Auth;
@@ -36,3 +37,10 @@ myApp.component('signup', {
 
 
 
+=======
+  templateUrl: 'js/auth/signupComponent/signup.html',
+  controller: function() {
+    console.log('hello from the signup component');
+  }
+});
+>>>>>>> 6ba607e714175bd73a2055095d2e92595dc2abf3

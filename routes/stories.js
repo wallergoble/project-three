@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
   console.log('about to find some stories...');
   Story.find().sort('-createdAt')
   .then(function(stories) {
-    res.json({ stories: stories });
+    res.json(stories);
   })
   .catch(function(err) {
     return next(err);
@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   Story.create(req.body)
   .then(function(savedStory) {
-    res.json({ story: savedStory });
+    res.json(savedStory);
   })
   .catch(function(err) {
     return next(err);
@@ -41,7 +41,7 @@ router.get('/:id', function(req, res, next) {
   Story.findById(req.params.id)
   .then(function(story) {
     if (!story) return next(makeError(res, 'Document not found', 404));
-    res.json({ story: story });
+    res.json(story);
   })
   .catch(function(err) {
     return next(err);

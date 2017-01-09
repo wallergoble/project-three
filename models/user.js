@@ -11,8 +11,13 @@ var UserSchema = new mongoose.Schema({
     lastName : String,
     email    : String,
     password : String
+<<<<<<< HEAD
 
   // authors : [Author.schema]
+=======
+  },
+  stories : [Story.schema]
+>>>>>>> 6ba607e714175bd73a2055095d2e92595dc2abf3
 });
 
 // UserSchema.methods.generateJwt = function() {

@@ -1,0 +1,43 @@
+<nav>
+     <ul>
+     <style>
+         a {
+             margin: 10px;
+         }
+     </style>
+             <a ui-sref="storyNew">New</a>
+             <a ui-sref="storyIndex">Index</a>
+             <a ui-sref="storyShow">Show</a>
+             <a ui-sref="storyEdit">Edit</a>
+             <a ui-sref="signup">Sign Up</a>
+     </ul>
+</nav>
+<div class="container">
+   <form ng-submit="$ctrl.save()">
+       <h1> Who is in your story? <h1>
+       <div>
+           <label for="name"></label>
+           <input type="text"
+               name="name"
+               placeholder="Matilda"
+               ng-model="$ctrl.story.name">
+       </div>
+       <h1> What are they? <h1>
+       <div>
+           <label for="animal"></label>
+           <input type="text"
+               animal="animal"
+               placeholder="Slug"
+               ng-model="$ctrl.story.animal">
+       </div>
+       <h1> Where are they going? <h1>
+       <div>
+           <label for="place"></label>
+           <input type="text"
+               place="place"
+               placeholder="Greece"
+               ng-model="$ctrl.story.place">
+       </div>
+       <button type="submit">Save!</button>
+   </form>
+</div>

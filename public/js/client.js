@@ -76,8 +76,12 @@ myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
 
 	// Helper function to link index and individual show routes
 	this.show = function(story) {
-		console.log(story);
 		$state.go('storyShow', { id: story._id });
+	};
+
+	// Helper function to link to edit
+	this.edit = function(story) {
+		$state.go('storyEdit', { id: story._id });
 	};
 });
 // New Story Controller

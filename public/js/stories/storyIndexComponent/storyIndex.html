@@ -16,7 +16,10 @@
  {{$ctrl.stories}}
 <ul>
   <li ng-repeat="story in $ctrl.stories">
-    <p> <a ng-click="$ctrl.show(story)" > {{story.title}} </a> </p>
-    <!-- <p> <a ui-sref="storyShow" ui-sref-opts="{ id: $ctrl.story._id }"> {{story.title}} </a> </p> -->
+    <article>
+      <a ng-click="$ctrl.show(story)" > {{story.title}} </a>
+      <button ng-click="$ctrl.edit(story)">Edit</button>
+      <button ng-click="alert('this works')">Delete</button>
+    </article>
   </li>
 </ul>

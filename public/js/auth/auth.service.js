@@ -87,7 +87,8 @@ console.log('hello from auth services');
 
 
 angular.module('myApp')
-    .service('Auth', function($http, $q) {
+    .service('Auth', ['$q', '$http',
+        function($http, $q) {
 
         var currentUser = null;
 
@@ -140,4 +141,4 @@ angular.module('myApp')
         };
 
         this.getCurrentUser();
-    });
+    }]);

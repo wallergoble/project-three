@@ -20,6 +20,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		url: '/signup',
 		template: '<signup></signup>'
 	})
+
 	.state('storyIndex', {
 		url: '/my-library',
 		templateUrl: 'js/stories/storyIndexComponent/storyIndex.html',
@@ -124,6 +125,7 @@ myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
 	}, 1000)
 
 });
+
 
 
 // const myApp = angular.module('storyBook', ['ui.router']);

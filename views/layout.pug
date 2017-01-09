@@ -4,6 +4,7 @@ html
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 	body(ng-app='storyBook')
+		navbar
 		ui-view
 		block content
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js')
@@ -20,5 +21,6 @@ html
 		script(src='/js/auth/auth.service.js')
 		script(src='/js/auth/loginComponent/login.component.js')
 		script(src='/js/auth/signupComponent/signup.component.js')
+		script(src='/js/navbarComponent/navbar.js')
 
 		//script(src='/angular-popeye/release/popeye.js') might work for simple modals

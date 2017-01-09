@@ -1,9 +1,7 @@
-<<<<<<< HEAD
+
 <h2>SIGN UP</h2>
 
-<form ng-submit="$ctrl.submitForm()">
 
-<fieldset ng-disabled="$ctrl.isSubmitting">
 
     <form name="form" ng-submit='$ctrl.signup(form)' novalidate>
 
@@ -13,7 +11,7 @@
 
         <fieldset class="form-group">
 
-            <label for="FirstName"> First Name:</label>
+            <label for="firstName"> First Name:</label>
 
             <input type="text"
                    id="firstName"
@@ -37,7 +35,7 @@
                                               'has-error': form.lastName.$invalid && $ctrl.submitted }">
 
 
-                <label for="LastName">Last Name</label>
+                <label for="lastName">Last Name</label>
 
             <input type="text"
                    id="lastName"
@@ -92,7 +90,7 @@
 
                 <p class="help-block"
                    ng-show="(form.password.$error.minlength || form.password.$error.required) && $ctrl.submitted">
-                    Password must be at least 3 characters.
+                    Password must be at least 6 characters.
                 </p>
 
                 <p class="help-block" ng-show="form.password.$error.mongoose">
@@ -110,8 +108,5 @@
         <button type="submit"
                 class="btn btn-primary">SUBMIT</button>
     </form>
-</form>
-</fieldset>
-=======
-<h1>Sign up</h1>
->>>>>>> 6ba607e714175bd73a2055095d2e92595dc2abf3
+
+

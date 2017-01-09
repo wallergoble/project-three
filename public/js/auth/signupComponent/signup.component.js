@@ -4,13 +4,13 @@ myApp.component('signup', {
         this.Auth = Auth;
         this.$state = $state;
 
-        this.register = function(form) {
+        this.signup = function(form) {
             this.submitted = true;
 
             if (form.$valid) {
-                return this.Auth.createUser({
-                        firstname: this.user.firstname,
-                        lastname: this.user.lastname,
+                return this.Auth.signup({
+                        firstName: this.user.firstName,
+                        lastName: this.user.lastName,
                         email: this.user.email,
                         password: this.user.password
                     })

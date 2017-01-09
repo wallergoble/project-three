@@ -45,6 +45,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		controllerAs: '$ctrl'
 	});
 });
+
 // Index controller
 myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
 	// We set this value to be able to access the result of getStories
@@ -68,7 +69,17 @@ myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
 	this.edit = function(story) {
 		$state.go('storyEdit', { id: story._id });
 	};
+
+	this.delete = function(story) {
+		console.log('this is story we are going to delete:', story);
+		storyService.delete(story)
+		.then( res => {
+			this.getStories();
+			$state.go('storyIndex')
+		});
+	};
 });
+
 // New Story Controller
 myApp.controller('newCtrl', function(storyService, $state) {
 	this.story = {
@@ -124,7 +135,6 @@ myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
 	}, 1000)
 
 });
-
 
 // const myApp = angular.module('storyBook', ['ui.router']);
 //

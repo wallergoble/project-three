@@ -11,20 +11,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('index', {
 		url: '/index',
 		template: `
+		
 		<nav>
-				 <ul>
-				 <style>
-						 a {
-								 margin: 10px;
-						 }
-				 </style>
-								 <a ui-sref="storyNew">New</a>
-								 <a ui-sref="storyIndex">Index</a>
-								 <a ui-sref="storyShow">Show</a>
-								 <a ui-sref="storyEdit">Edit</a>
-								 <a ui-sref="signup">Sign Up</a>
-				 </ul>
-		</nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Home</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a ui-sref="storyNew">New</a></li>
+        <li><a ui-sref="storyIndex">Index</a></li>
+        <li><a ui-sref="storyShow">Show</a></li>
+        <li><a ui-sref="storyEdit">Edit</a></li>
+        <li><a ui-sref="signup">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
 
 		<h1> Welcome to our app </h1>
 		<login></login>

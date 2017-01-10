@@ -2,18 +2,28 @@ html
 	head
 		title Story Book App
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 	body(ng-app='storyBook')
 		h1 MY STORY BOOK APP
 		navbar
 		ui-view
 		block content
+
+		//- Angular dependency requirements
+
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js')
+
+		//- client.js requirement (has to come after angular dependencies)
 		script(src='/js/client.js')
+
+		//- view scripts (has to come after client.js)
+
 		script(src='/js/stories/storyEditComponent/storyEdit.component.js')
 		script(src='/js/stories/storyIndexComponent/storyIndex.component.js')
 		script(src='/js/stories/storyNewComponent/storyNew.component.js')

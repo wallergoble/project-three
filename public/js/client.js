@@ -12,7 +12,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		url: '/index',
 		template: `
 		<login></login>
-		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
+		<p> <a ui-sref="signup"> Click here </a> to sign up</p>
 		`
 	})
 	.state('signup', {

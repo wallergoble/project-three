@@ -47,7 +47,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 });
 
 // Index controller
-myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
+myApp.controller('indexCtrl', function(storyService, $stateParams, $state) {
 	// We set this value to be able to access the result of getStories
 	this.stories = null;
 

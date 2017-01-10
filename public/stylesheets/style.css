@@ -8,14 +8,10 @@ body {
 
 #addStory {
   float: right;
+  margin: 10em;
 }
 
-#storyIndex-nav {
-  margin-bottom: 50px;
-}
-
-
-#storyNew-nav {
+#navbar {
   margin-bottom: 50px;
 }
 
@@ -26,14 +22,6 @@ body {
   text-align: center;
   vertical-align: center;
   height:55px;
-}
-
-#storyShow-nav {
-  margin-bottom: 50px;
-}
-
-#storyEdit-nav {
-  margin-bottom: 50px;
 }
 
 #storyEditSaveBtn {

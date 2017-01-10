@@ -28,6 +28,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   console.log('hello from post router');
   let story = new Story({
+    title: req.body.title,
     name: req.body.name,
     animal: req.body.animal,
     place: req.body.place
@@ -62,6 +63,7 @@ router.put('/:id', function(req, res, next) {
   .then(function(story) {
     if (!story) return next(makeError(res, 'Document not found', 404));
     // if (!req.user._id.equals(story.user)) return next(makeError(res, 'Unauthorized', 401));
+    story.title = req.body.title;
     story.name = req.body.name;
     story.animal = req.body.animal;
     story.place = req.body.place;

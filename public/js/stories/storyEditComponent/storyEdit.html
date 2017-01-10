@@ -1,6 +1,14 @@
 
 <div class="container">
    <form ng-submit="$ctrl.save()">
+       <h1> What is your story title? <h1>
+       <div>
+           <label for="title"></label>
+           <input type="text"
+               name="title"
+               placeholder="The Magnificent Journey"
+               ng-model="$ctrl.story.title">
+       </div>
        <h1> Who is in your story? <h1>
        <div>
            <label for="name"></label>

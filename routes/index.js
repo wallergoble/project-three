@@ -20,9 +20,9 @@ router.post('/signup', function(req, res) {
                 });
             }
             passport.authenticate('local')(req, res, function () {
-                return res.status(200).json({
-                    status: 'Registration successful!'
-                });
+
+                res.json({username: User.local.username});
+
             });
         });
 });
@@ -44,9 +44,7 @@ router.post('/login', function(req, res, next) {
                     err: 'Could not log in user'
                 });
             }
-            res.status(200).json({
-                status: 'Login successful!'
-            });
+            res.json({username: User.local.username});
         });
     })(req, res, next);
 });

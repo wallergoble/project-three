@@ -26,9 +26,28 @@ body {
   margin: 8%;
 }
 
+#storyIndexEditBtn {
+  float: right;
+}
+
+#storyIndexDeleteBtn {
+  float: right;
+}
+
+#storyIndexEditBtn:hover {
+  transform: translateY(2px);
+}
+
+#storyIndexDeleteBtn:hover {
+  transform: translateY(2px);
+}
+
 #addStoryBtn {
   width: 200px;
   height: 200px;
+}
+#addStoryBtn:hover {
+  transform: translateY(4px);
 }
 
 #navbar {

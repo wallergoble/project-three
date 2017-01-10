@@ -18,8 +18,8 @@
     <article>
       <a ng-click="$ctrl.show(story)" > {{story.title}} </a>
       <button ng-click="$ctrl.edit(story)">Edit</button>
-      <button ng-click="alert('this works')">Delete</button>
+      <button ng-click="$ctrl.delete(story)">Delete</button>
     </article>
   </li>
 </ul>
-<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+<a class="btn-floating btn-large waves-effect waves-light red" ui-sref="storyNew"><i class="material-icons">add</i></a>

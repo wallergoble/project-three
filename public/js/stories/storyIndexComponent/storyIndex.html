@@ -1,12 +1,12 @@
-
-<nav id="storyIndex-nav">
-    <div class="nav-wrapper" >
-        <a href="#" class="brand-logo">Your Library</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a ui-sref="#">Log Out</a></li>
-        </ul>
-    </div>
-</nav>
+<navbar></navbar>
+<!--<nav id="storyIndex-nav">-->
+    <!--<div class="nav-wrapper" >-->
+        <!--<a href="#" class="brand-logo">Your Library</a>-->
+        <!--<ul id="nav-mobile" class="right hide-on-med-and-down">-->
+            <!--<li><a ui-sref="#">Log Out</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</nav>-->
 
 
 <div id="storyList">
@@ -21,9 +21,9 @@
       <a ng-click="$ctrl.show(story)" > {{story.title}} </a>
 
         <button ng-click="$ctrl.edit(story)" class="btn-floating waves-effect waves-light green"><i class="material-icons">mode_edit</i></button>
-        <button ng-click="alert('this works')" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
-      <!--<button ng-click="$ctrl.edit(story)">Edit</button>-->
-      <!--<button ng-click="alert('this works')">Delete</button>-->
+        <button ng-click="$ctrl.delete(story)" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
+        <!--<button ng-click="$ctrl.edit(story)">Edit</button>-->
+        <!--<button ng-click="$ctrl.delete(story)">Delete</button>-->
     </article>
   </li>
 </ul>
@@ -34,10 +34,5 @@
 </div>
 
 
-      <button ng-click="$ctrl.edit(story)">Edit</button>
-      <button ng-click="$ctrl.delete(story)">Delete</button>
-    </article>
-  </li>
-</ul>
 <a class="btn-floating btn-large waves-effect waves-light red" ui-sref="storyNew"><i class="material-icons">add</i></a>
 

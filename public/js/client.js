@@ -29,11 +29,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
           </div>
         </div>
       </div>
-            
-
-		<login></login>
-		<p> <a ui-sref="signup"> Click here </a> to sign up</p>
-
 		`
 	})
 	.state('signup', {

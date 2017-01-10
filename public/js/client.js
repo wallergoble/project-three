@@ -28,14 +28,13 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
 		`
 	})
 	.state('signup', {
 		url: '/signup',
 		template: '<signup></signup>'
 	})
-
 	.state('storyIndex', {
 		url: '/my-library',
 		templateUrl: 'js/stories/storyIndexComponent/storyIndex.html',
@@ -91,7 +90,7 @@ myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
 		storyService.delete(story)
 		.then( res => {
 			this.getStories();
-			$state.go('storyIndex')
+			$state.go('storyIndex');
 		});
 	};
 });
@@ -99,6 +98,7 @@ myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
 // New Story Controller
 myApp.controller('newCtrl', function(storyService, $state) {
 	this.story = {
+		title		 :  '',
 		name     :  '',
 		animal   :  '',
 		place    :  ''
@@ -138,20 +138,13 @@ myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
 			.then( res => {
 				$state.go('storyShow', { id: this.story._id });
 			});
-		}
+		};
 
 		storyService.getStory($stateParams.id)
 		.then( res => {
-			console.log('went and got a story: ', res.data);
 			this.story = res.data;
-			console.log('this is this.story inside the function', this.story);
 		});
-		setTimeout(function() {
- 		console.log('this is this.story outside the function after 5 seconds', this.story);
-	}, 1000)
-
 });
-
 
 // const myApp = angular.module('storyBook', ['ui.router']);
 //

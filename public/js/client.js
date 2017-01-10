@@ -11,7 +11,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('index', {
 		url: '/index',
 		template: `
-	<h1> My Story Books </h1>
 		<login></login>
 		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
 		`
@@ -137,11 +136,7 @@ myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
 
 });
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> bcfefe6c80b76e46b5667010fdd37b0336d6d4b4
 // const myApp = angular.module('storyBook', ['ui.router']);
 //
 // myApp.config(function($stateProvider, $urlRouterProvider) {

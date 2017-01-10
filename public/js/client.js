@@ -12,6 +12,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('index', {
 		url: '/index',
 		template: `
+
 	<h1> My Story Books </h1>
       <div class="row">
         <div class="col s12 m6">
@@ -29,12 +30,17 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         </div>
       </div>
             
+
+		<login></login>
+		<p> <a ui-sref="signup"> Click here </a> to sign up</p>
+
 		`
 	})
 	.state('signup', {
 		url: '/signup',
 		template: '<signup></signup>'
 	})
+
 	.state('storyIndex', {
 		url: '/my-library',
 		templateUrl: 'js/stories/storyIndexComponent/storyIndex.html',
@@ -60,6 +66,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		controllerAs: '$ctrl'
 	});
 });
+
 // Index controller
 myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
 	// We set this value to be able to access the result of getStories
@@ -83,7 +90,17 @@ myApp.controller('indexCtrl', function(storyService, $stateParams,$state) {
 	this.edit = function(story) {
 		$state.go('storyEdit', { id: story._id });
 	};
+
+	this.delete = function(story) {
+		console.log('this is story we are going to delete:', story);
+		storyService.delete(story)
+		.then( res => {
+			this.getStories();
+			$state.go('storyIndex')
+		});
+	};
 });
+
 // New Story Controller
 myApp.controller('newCtrl', function(storyService, $state) {
 	this.story = {

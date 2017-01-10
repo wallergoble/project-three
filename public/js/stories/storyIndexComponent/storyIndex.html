@@ -1,17 +1,14 @@
 <navbar></navbar>
 
 <div id="storyList">
-<h1> {{$ctrl.username}}'s Stories </h1>
-
- <!--{{$ctrl.stories}}-->
-
-
+<!--<h1> {{$ctrl.username}}'s Stories </h1>-->
+    <!--{{$ctrl.stories}}-->
 <ul>
-  <li ng-repeat="story in $ctrl.stories">
+  <li id='singleStoryInList' ng-repeat="story in $ctrl.stories">
     <article>
       <a ng-click="$ctrl.show(story)" > {{story.title}} </a>
-        <button ng-click="$ctrl.edit(story)" class="btn-floating waves-effect waves-light green"><i class="material-icons">mode_edit</i></button>
-        <button ng-click="$ctrl.delete(story)" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
+        <button ng-click="$ctrl.edit(story)" class="btn-floating btn-small waves-effect waves-light blue"><i class="material-icons">mode_edit</i></button>
+        <button ng-click="$ctrl.delete(story)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></button>
         <!--<button ng-click="$ctrl.edit(story)">Edit</button>-->
         <!--<button ng-click="$ctrl.delete(story)">Delete</button>-->
     </article>
@@ -20,7 +17,7 @@
 </div>
 
 <div id="addStory">
-    <a ui-sref='storyNew' class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a ui-sref='storyNew' id='addStoryBtn' class="btn-floating btn-large waves-effect waves-light "><i class="material-icons">add</i></a>
 </div>
 
 

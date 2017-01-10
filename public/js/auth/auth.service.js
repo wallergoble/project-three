@@ -10,16 +10,16 @@ myApp.service('Auth', [ '$http','$q',
 
         var currentUser = null;
 
-        // this.getCurrentUser = function() {
-        //     return $http.get('/stories')
-        //             .then(res => {
-        //             currentUser = res.data;
-        // })
-        //     .catch(err => {
-        //         console.log('ERROR:', err);
-        //     return $q.reject(err.data);
-        // });
-        // };
+        this.getCurrentUser = function() {
+            return $http.get('/stories')
+                    .then(res => {
+                    currentUser = res.data;
+        })
+            .catch(err => {
+                console.log('ERROR:', err);
+            return $q.reject(err.data);
+        });
+        };
 
         this.getCurrentUserSync = function() {
             return currentUser;
@@ -59,5 +59,5 @@ myApp.service('Auth', [ '$http','$q',
 
         };
 
-        // this.getCurrentUser();
+        this.getCurrentUser();
     }]);

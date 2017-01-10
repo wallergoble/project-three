@@ -83,7 +83,6 @@ router.delete('/:id', function(req, res, next) {
        if(err){
            return next(err);
        } else {
-         console.log('this fucked up in the redirect')
            res.sendStatus(200);
        }
    });

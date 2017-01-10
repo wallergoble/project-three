@@ -8,10 +8,10 @@ console.log('hello from auth services');
 myApp.service('Auth', [ '$http','$q',
         function($http, $q) {
 
-        var currentUser = null;
+        const currentUser = null;
 
         this.getCurrentUser = function() {
-            return $http.get('/stories')
+            return $http.get('js/stories/storyIndex')
                     .then(res => {
                     currentUser = res.data;
         })

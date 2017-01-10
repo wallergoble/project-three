@@ -1,24 +1,28 @@
-<nav>
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
+<nav id="storyIndex-nav">
+    <div class="nav-wrapper" >
+        <a href="#" class="brand-logo">Your Library</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a ui-sref="storyNew">New</a></li>
-            <li><a ui-sref="storyIndex">Index</a></li>
-            <li><a ui-sref="storyShow">Show</a></li>
-            <li><a ui-sref="storyEdit">Edit</a></li>
-            <li><a ui-sref="signup">Sign Up</a></li>
+            <li><a ui-sref="#">Log Out</a></li>
         </ul>
     </div>
 </nav>
-<h1> Your Stories </h1>
- {{$ctrl.stories}}
+
+
+<div id="storyList">
 <ul>
   <li ng-repeat="story in $ctrl.stories">
     <article>
       <a ng-click="$ctrl.show(story)" > {{story.title}} </a>
-      <button ng-click="$ctrl.edit(story)">Edit</button>
-      <button ng-click="alert('this works')">Delete</button>
+        <button ng-click="$ctrl.edit(story)" class="btn-floating waves-effect waves-light green"><i class="material-icons">mode_edit</i></button>
+        <button ng-click="alert('this works')" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
+      <!--<button ng-click="$ctrl.edit(story)">Edit</button>-->
+      <!--<button ng-click="alert('this works')">Delete</button>-->
     </article>
   </li>
 </ul>
-<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+</div>
+
+<div id="addStory">
+    <a ui-sref='storyNew' class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+</div>
+

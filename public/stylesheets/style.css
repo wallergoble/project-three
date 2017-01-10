@@ -1,3 +1,54 @@
 body {
   padding: 50px;
 }
+
+#storyList {
+  float: left;
+}
+
+#addStory {
+  float: right;
+}
+
+#storyIndex-nav {
+  margin-bottom: 50px;
+}
+
+
+#storyNew-nav {
+  margin-bottom: 50px;
+}
+
+
+#saveStoryBtn {
+  padding: 10px;
+  font-size: 55%;
+  text-align: center;
+  vertical-align: center;
+  height:55px;
+}
+
+#storyShow-nav {
+  margin-bottom: 50px;
+}
+
+#storyEdit-nav {
+  margin-bottom: 50px;
+}
+
+#storyEditSaveBtn {
+  padding: 10px;
+  font-size: 55%;
+  text-align: center;
+  vertical-align: center;
+  height:55px;
+}
+
+#storyEditBackBtn {
+  padding: 10px;
+  font-size: 55%;
+  text-align: center;
+  vertical-align: center;
+  height:55px;
+}
+

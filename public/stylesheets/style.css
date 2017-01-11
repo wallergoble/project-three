@@ -2,6 +2,41 @@ body {
   padding: 50px;
 }
 
+#navbar {
+  margin-bottom: 50px;
+  box-shadow: 0 8px 6px -6px #999;
+}
+
+#navbar h2 {
+  text-align: center;
+}
+
+#loginCard {
+  text-align: center;
+  width: 1200px;
+  margin: ;
+}
+
+ #loginBtn{
+   margin-top: 20px;
+   margin-right: 10px;
+ }
+
+#signUpBtn{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#signUpNewBtn{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#signUpBackBtn{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
 #storyList {
   float: left;
   border: 1px solid lightgray;
@@ -52,10 +87,7 @@ body {
   transform: translateY(4px);
 }
 
-#navbar {
-  margin-bottom: 50px;
-  box-shadow: 0 8px 6px -6px #999;
-}
+
 
 
 
@@ -228,4 +260,5 @@ body {
 .fullProgress{
   width: 100%;
 }
+
 

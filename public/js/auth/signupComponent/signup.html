@@ -1,57 +1,6 @@
 <h2>SIGN UP</h2>
 
-
-
 <form name="form" ng-submit='$ctrl.signup(form)' novalidate>
-
-    <!--<div class="form-group" ng-class="{ 'has-success': form.firstName.$valid && $ctrl.submitted,-->
-                                          <!--'has-error': form.firstName.$invalid && $ctrl.submitted }">-->
-
-
-        <!--<fieldset class="form-group">-->
-
-            <!--<label for="firstName"> First Name:</label>-->
-
-            <!--<input type="text"-->
-                   <!--id="firstName"-->
-                   <!--placeholder="first"-->
-                   <!--ng-model="$ctrl.user.firstName"-->
-                   <!--name="firstName"-->
-                   <!--class="form-control" required />-->
-
-
-            <!--<p class="help-block" ng-show="form.firstName.$error.required && $ctrl.submitted">-->
-                <!--Required-->
-            <!--</p>-->
-
-
-        <!--</fieldset>-->
-
-    <!--</div>-->
-
-
-
-    <!--<div class="form-group" ng-class="{ 'has-success': form.lastName.$valid && $ctrl.submitted,-->
-                                          <!--'has-error': form.lastName.$invalid && $ctrl.submitted }">-->
-
-        <!--<fieldset class="form-group">-->
-
-            <!--<label for="lastName">Last Name</label>-->
-
-            <!--<input type="text"-->
-                   <!--id="lastName"-->
-                   <!--placeholder="last"-->
-                   <!--ng-model="$ctrl.user.lastName"-->
-                   <!--name="lastName"-->
-                   <!--class="form-control" required />-->
-
-                <!--<p class="help-block" ng-show="form.lastName.$error.required && $ctrl.submitted">-->
-                    <!--Required-->
-                <!--</p>-->
-
-        <!--</fieldset>-->
-    <!--</div>-->
-
 
     <div class="form-group" ng-class="{ 'has-success': form.username.$valid && $ctrl.submitted,
                                         'has-error': form.username.$invalid && $ctrl.submitted }">
@@ -69,6 +18,7 @@
             <p class="help-block" ng-show="form.username.$error.required && $ctrl.submitted">
                 What's your email address?
             </p>
+
             <p class="help-block" ng-show="form.username.$error.mongoose">
                 {{ $ctrl.errors.username }}
             </p>
@@ -77,15 +27,12 @@
 
     </div>
 
-
     <div class="form-group" ng-class="{ 'has-success': form.password.$valid && $ctrl.submitted,
                                           'has-error': form.password.$invalid && $ctrl.submitted }">
 
         <fieldset class="form-group">
 
-
             <label for="password">Password</label>
-
             <input type="password"
                    id="password"
                    placeholder="password"
@@ -115,5 +62,5 @@
 
     <button type="submit"
             class="btn btn-primary">SUBMIT</button>
-</form>
 
+</form>

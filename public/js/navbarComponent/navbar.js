@@ -1,6 +1,5 @@
 console.log('hello from navbar');
 
-
 myApp.component('navbar', {
     templateUrl: '/js/navbarComponent/navbar.html',
     controller: function (Auth, $state) {

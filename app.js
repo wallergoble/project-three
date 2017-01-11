@@ -7,9 +7,10 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var passport = require('passport');
-var LocalStrategy = require('passport-local');
-var passportLocalMongoose = require('passport-local-mongoose');
-var User = require('./models/user');
+var session = require('express-session');
+// var LocalStrategy = require('passport-local');
+// var passportLocalMongoose = require('passport-local-mongoose');
+// var User = require('./models/user');
 
 mongoose.Promise = require('bluebird');
 
@@ -53,16 +54,20 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
 //PASSPORT CONFIG
-app.use(require('express-session')({
+app.use(session({
     secret: 'I love cats too',
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
+
+// Configure passport with our custom configuration code
+require('./config passport/passport')(passport);
+
+// passport.use(new LocalStrategy(User.authenticate()));
 // passport.use(new LocalStrategy({
 //         usernameField: 'email'
 //     },
@@ -86,15 +91,15 @@ passport.use(new LocalStrategy(User.authenticate()));
 //         });
 //     }
 // ));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 
 
 // This middleware will allow us to use the currentUser in our views and routes.
-app.use(function (req, res, next) {
-    global.currentUser = req.user;
-    next();
-});
+// app.use(function (req, res, next) {
+//     global.currentUser = req.user;
+//     next();
+// });
 
 //ROUTES
 app.use('/', index);

@@ -15,7 +15,7 @@ function makeError(res, message, status) {
 // get all the story and return as JSON data
 router.get('/', function(req, res, next) {
   console.log('about to find some stories...');
-  Story.find().sort('-createdAt')
+  Story.find({}).sort('-createdAt')
   .then(function(stories) {
     res.json(stories);
   })

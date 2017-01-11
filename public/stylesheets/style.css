@@ -27,10 +27,12 @@ body {
 }
 
 #storyIndexEditBtn {
+  margin-right: 2px;
   float: right;
 }
 
 #storyIndexDeleteBtn {
+  margin-right: 4px;
   float: right;
 }
 
@@ -103,4 +105,15 @@ body {
   /*background-image: url("/images/512x512.png");*/
 }
 
+.storyshowcontainer {
+  width: 1200px;
+}
+
+.imageSide {
+  float: right;
+}
+
+.textSide {
+  float: left;
+}
 

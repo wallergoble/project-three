@@ -3,34 +3,42 @@
 <main>
     <section id="titleSection" class="showSection">
         <article class="textSide">
-            <h3>{{$ctrl.story.title}} </h3>
+            <h1>{{$ctrl.story.title}} </h1>
         </article>
         <article>
-            <<h2>Put an image and block align me</h2>
+
+        </article>
+        <article>
+            <h2>Put an image and block align me</h2>
         </article>
     </section>
     <section id="animalSection" class="showSection">
         <article class="textSide">
             <h3>{{$ctrl.story.name}} the {{$ctrl.story.animal}} </h3>
         </article>
-        <article>
-            <<h2>Put an image and block align me</h2>
+        <article class="imageSide" 
+                ng-class="{ true: 'catPicture' }[$ctrl.story.animal === 'cat']"
+                ng-class="{ true: 'dogPicture' }[$ctrl.story.animal === 'dog']" 
+                ng-class="{ true: 'bunnyPicture' }[$ctrl.story.animal === 'bunny']">
+            <h2>Put an image and block align me</h2>
         </article>
     </section>
     <section id="placeSection" class="showSection">
         <article class="textSide">
             <h3> went to the {{$ctrl.story.place}} </h3>
         </article>
-        <article>
-            <<h2>Put an image and block align me</h2>
+        <article class="imageSide"
+                ng-class="{ true: 'beachPicture' }[$ctrl.story.place === 'beach']"
+                ng-class="{ true: 'mountainsPicture' }[$ctrl.story.place === 'mountains']">
+            <h2>Put an image and block align me</h2>
         </article>
     </section>
     <section id="fillerSection" class="showSection">
         <article class="textSide">
             <h3> and had a great time with all their friends </h3>
         </article>
-        <article>
-            <<h2>Put an image of friends and block align me</h2>
+        <article class="imageSide">
+            <h2>Put an image of friends and block align me</h2>
         </article>
     </section>
     <section id="endSection" class="showSection">

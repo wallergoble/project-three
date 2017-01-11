@@ -13,23 +13,50 @@
        <h1> Who is in your story? <h1>
        <div>
            <label for="name"></label>
+           
            <input type="text"
                name="name"
                id="name"
                placeholder="Name"
                ng-model="$ctrl.story.name">
        </div>
-       <h1> What are they? <h1>
+       <h1> What are they? Currently: {{$ctrl.story.animal}} </h1>
        <div>
            <label for="animal"></label>
+           <input type="radio"
+                id="catRadio"
+                name="string"
+                ng-model="$ctrl.story.animal"
+                ng-value="cat">
+           <input type="radio"
+                id="dogRadio"
+                name="string"
+                ng-model="$ctrl.story.animal"
+                ng-value="dog">
+           <input type="radio"
+                id="bunnyRadio"
+                name="string"
+                ng-model="$ctrl.story.animal"
+                ng-value="bunny">
+            <!--<h3>Or choose your own:</h3>
            <input type="text"
                name="animal"
                id="animal"
                placeholder="Type of Animal"
-               ng-model="$ctrl.story.animal">
+               ng-model="$ctrl.story.animal">-->
        </div>
        <h1> Where are they going? <h1>
        <div>
+           <input type="radio"
+                id="beachRadio"
+                name="string"
+                ng-model="$ctrl.story.place"
+                ng-value="beach">
+            <input type="radio"
+                id="mountainsRadio"
+                name="string"
+                ng-model="$ctrl.story.place"
+                ng-value="mountains">
            <label for="place"></label>
            <input type="text"
                name="place"
@@ -37,10 +64,17 @@
                placeholder="Place"
                ng-model="$ctrl.story.place">
        </div>
-       <br>
 
+       <div class="statusBar"> 
+        <h1>Quick and dirty status bar </h1>
+        <h3>Title: {{$ctrl.story.title}} </h3>
+        
+        <h3>Name: {{$ctrl.story.name}} </h3>
+        <h3>Animal {{$ctrl.story.animal}} </h3>
+        <h3>Place: {{$ctrl.storyPlace}} </h3>
+       </div> 
+       <br>
        <input id="storyNewSaveBtn" class="waves-effect waves-light btn" type="submit" value="Save" >
        <button id='storyNewBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Back</button>
-
    </form>
 </div>

@@ -1,7 +1,7 @@
 <navbar></navbar>
 <div class="container">
    <form ng-submit="$ctrl.save()">
-       <h1> What is your story title? <h1>
+       <!--<h1> What is your story title? <h1>
        <div>
            <label for="title"></label>
            <input type="text"
@@ -9,33 +9,40 @@
                id="title"
                placeholder="The Magnificent Journey"
                ng-model="$ctrl.story.title">
-       </div>
-       <h1> Who is in your story? <h1>
+       </div>-->
+       <!--<h1> Who is in your story? <h1>
        <div>
            <label for="name"></label>
-           
            <input type="text"
                name="name"
                id="name"
                placeholder="Name"
                ng-model="$ctrl.story.name">
-       </div>
+       </div>-->
        <h1> What are they? Currently: {{$ctrl.story.animal}} </h1>
        <div>
-           <label for="animal"></label>
+           <label for="cat">
            <input type="radio"
                 id="catRadio"
                 name="string"
+                class="radio"
                 ng-model="$ctrl.story.animal"
                 ng-value="cat">
+            Cat
+            </label>
+           <label for="dog"></label>     
            <input type="radio"
                 id="dogRadio"
                 name="string"
+                class="radio"
                 ng-model="$ctrl.story.animal"
                 ng-value="dog">
+
+           <label for="bunny"></label>
            <input type="radio"
                 id="bunnyRadio"
                 name="string"
+                class="radio"
                 ng-model="$ctrl.story.animal"
                 ng-value="bunny">
             <!--<h3>Or choose your own:</h3>
@@ -44,17 +51,19 @@
                id="animal"
                placeholder="Type of Animal"
                ng-model="$ctrl.story.animal">-->
-       </div>
+       <!--</div>
        <h1> Where are they going? <h1>
        <div>
            <input type="radio"
                 id="beachRadio"
                 name="string"
+                class="radio"
                 ng-model="$ctrl.story.place"
                 ng-value="beach">
             <input type="radio"
                 id="mountainsRadio"
                 name="string"
+                class="radio"
                 ng-model="$ctrl.story.place"
                 ng-value="mountains">
            <label for="place"></label>
@@ -63,7 +72,7 @@
                id="place"
                placeholder="Place"
                ng-model="$ctrl.story.place">
-       </div>
+       </div>-->
        <!--Status Dash Board-->
        <div class="statusBar"> 
         <h1>Quick and dirty status bar </h1>
@@ -74,12 +83,12 @@
         <!--Progress bar-->
         <div class="progress">
             <div class="determinate" 
-                ng-class="{ true: '.noProgress' }[$ctrl.story.title ===  '']"
-                ng-class="{ true: '.fourthProgress' }[$ctrl.story.title !==  '']"
-                ng-class="{ true: '.halfProgress' }[$ctrl.story.name !==  '']"
-                ng-class="{ true: '.threeFourthsProgress' }[$ctrl.story.animal !==  '']"
-                ng-class="{ true: '.fullProgress' }[$ctrl.story.place !==  '']"
-                ></div>
+                 ng-class="{ true: '.noProgress' }[$ctrl.story.title ===  '']"
+                 ng-class="{ true: '.fourthProgress' }[$ctrl.story.title !==  '']"
+                 ng-class="{ true: '.halfProgress' }[$ctrl.story.name !==  '']"
+                 ng-class="{ true: '.threeFourthsProgress' }[$ctrl.story.animal !==  '']"
+                 ng-class="{ true: '.fullProgress' }[$ctrl.story.place !==  '']">
+            </div>
         </div>    
        </div> 
        <br>

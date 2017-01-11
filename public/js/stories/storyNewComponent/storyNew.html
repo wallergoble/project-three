@@ -1,46 +1,72 @@
 <navbar></navbar>
 <div class="container">
-   <form ng-submit="$ctrl.save()">
-       <h1> What is your story title? <h1>
-       <div>
-           <label for="title"></label>
-           <input type="text"
-               name="title"
-               id="title"
-               placeholder="The Magnificent Journey"
-               ng-model="$ctrl.story.title">
-       </div>
-       <h1> Who is in your story? <h1>
-       <div>
-           <label for="name"></label>
-           <input type="text"
-               name="name"
-               id="name"
-               placeholder="Name"
-               ng-model="$ctrl.story.name">
-       </div>
-       <h1> What are they? <h1>
-       <div>
-           <label for="animal"></label>
-           <input type="text"
-               name="animal"
-               id="animal"
-               placeholder="Type of Animal"
-               ng-model="$ctrl.story.animal">
-       </div>
-       <h1> Where are they going? <h1>
-       <div>
-           <label for="place"></label>
-           <input type="text"
-               name="place"
-               id="place"
-               placeholder="Place"
-               ng-model="$ctrl.story.place">
+  <form ng-submit="$ctrl.save()">
+    <h1>What is the title of your story?</h1>
+    <div>
+      <input name="title" type="text" id="titleText" ng-model="$ctrl.story.title" />
+      <label for="titleText">Title</label>
+    </div>
+
+    <h1>Who is your main character?</h1>
+    <div>
+      <input name="name" type="text" id="nameText" ng-model="$ctrl.story.name" />
+      <label for="nameText">Name</label>
+    </div>
+
+    <h1>Choose your animal!</h1>
+    <div>
+      <input name="animal" type="radio" id="catRadio" ng-model="$ctrl.story.animal" value="cat" checked="checked" />
+      <label for="catRadio">Cat</label>
+    </div>
+    <div>
+      <input name="animal" type="radio" id="dogRadio" ng-model="$ctrl.story.animal" value="dog" />
+      <label for="dogRadio">Dog</label>
+    </div>
+    <div>
+      <input name="animal" type="radio" id="bunnyRadio" ng-model="$ctrl.story.animal" value="bunny" />
+      <label for="bunnyRadio">Bunny</label>
+    </div>
+    <div>
+      <p>You selected: <input type="text" ng-model="$ctrl.story.animal"></p>
+    </div>
+
+    <h1>Choose your location!</h1>
+    <div>
+      <input name="place" type="radio" id="beachRadio" ng-model="$ctrl.story.place" value="beach" checked="checked" />
+      <label for="beachRadio">Beach</label>
+    </div>
+    <div>
+      <input name="place" type="radio" id="mountainRadio" ng-model="$ctrl.story.place" value="mountain" />
+      <label for="mountainRadio">Mountains</label>
+    </div>
+    <div>
+      <input name="place" type="radio" id="outerSpaceRadio" ng-model="$ctrl.story.place" value="outerSpace" />
+      <label for="outerSpaceRadio">Outer Space</label>
+    </div>
+    <div>
+      <p>You selected: <input type="text" ng-model="$ctrl.story.place"></p>
+    </div>
+
+    <input id="storyNewSaveBtn" class="waves-effect waves-light btn" type="submit" value="Save" >
+    <button id='storyNewBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Back</button>
+  </form>
+
+  <div class="statusBar">
+        <h1>Quick and dirty status bar </h1>
+        <h3>Title: {{$ctrl.story.title}} </h3>
+        <h3>Name: {{$ctrl.story.name}} </h3>
+        <h3>Animal {{$ctrl.story.animal}} </h3>
+        <h3>Place: {{$ctrl.story.place}} </h3>
+        <!--Progress bar-->
+        <div class="progress">
+            <div class="determinate"
+                 ng-class="{ true: '.noProgress' }[$ctrl.story.title ===  '']"
+                 ng-class="{ true: '.fourthProgress' }[$ctrl.story.title !==  '']"
+                 ng-class="{ true: '.halfProgress' }[$ctrl.story.name !==  '']"
+                 ng-class="{ true: '.threeFourthsProgress' }[$ctrl.story.animal !==  '']"
+                 ng-class="{ true: '.fullProgress' }[$ctrl.story.place !==  '']">
+            </div>
+        </div>
        </div>
        <br>
-
-       <input id="storyNewSaveBtn" class="waves-effect waves-light btn" type="submit" value="Save" >
-       <button id='storyNewBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Back</button>
-
-   </form>
 </div>

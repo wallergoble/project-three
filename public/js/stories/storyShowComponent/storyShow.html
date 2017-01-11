@@ -1,7 +1,58 @@
+<navbar></navbar>
+
+<div class="storyShowContainer">
+    <article>
+
+    <section id="titleSection">
+        <div>
+            <h2>{{$ctrl.story.title}} </h2>
+        </div>
+        <div>
+            <p>Put an image and block align me</p>
+        </div>
+    </section>
+
+    <section id="animalSection" class="showSection">
+        <div class="textSide">
+            <h4>{{$ctrl.story.name}} the {{$ctrl.story.animal}} </h4>
+        </div>
+        <div class="imageSide"
+                 ng-class="{ true: 'catPicture' }[$ctrl.story.animal === 'cat']"
+                 ng-class="{ true: 'dogPicture' }[$ctrl.story.animal === 'dog']"
+                 ng-class="{ true: 'bunnyPicture' }[$ctrl.story.animal === 'bunny']">
+            <h4>Put an image and block align me</h4>
+        </div>
+    </section>
+
+    <section id="placeSection" class="showSection">
+        <div class="textSide">
+            <h4> went to the {{$ctrl.story.place}} </h4>
+        </div>
+        <div class="imageSide"
+                 ng-class="{ true: 'beachPicture' }[$ctrl.story.place === 'beach']"
+                 ng-class="{ true: 'mountainsPicture' }[$ctrl.story.place === 'mountains']">
+            <h4>Put an image and block align me</h4>
+        </div>
+    </section>
+
+    <section id="fillerSection" class="showSection">
+        <div class="textSide">
+            <h4> and had a great time with all their friends </h4>
+        </div>
+        <div class="imageSide">
+            <h4>Put an image and block align me</h4>
+        </div>
+    </section>
 
 
-<h3>{{$ctrl.story.title}} </h3>
+    <section id="endSection">
+        <div>
+            <h2> The End </h2>
+        </div>
+    </section>
 
-<article> {{$ctrl.story.name}}, the {{$ctrl.story.animal}}, went to the {{$ctrl.story.place}} </article>
-<br>
-<a ui-sref="storyIndex">Back</a>
+        <br>
+        <button id='storyShowBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Back</button>
+
+    </article>
+</div>

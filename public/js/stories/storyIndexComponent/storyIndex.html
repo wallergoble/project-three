@@ -1,12 +1,23 @@
-<h1> My Stories </h1>
+<navbar></navbar>
 
-<ul>
-  <li ng-repeat="story in $ctrl.stories">
+<div id="storyList">
+<!--<h1> {{$ctrl.username}}'s Stories </h1>-->
+    <!--{{$ctrl.stories}}-->
+<ul >
+  <li class="card-panel"  id='singleStoryInList' ng-repeat="story in $ctrl.stories">
     <article>
-      <a ng-click="$ctrl.show(story)" > {{story.title}} </a>
-      <button ng-click="$ctrl.edit(story)">Edit</button>
-      <button ng-click="$ctrl.delete(story)">Delete</button>
+      <a class="light-blue-text text-darken-4" ng-click="$ctrl.show(story)" > {{story.title}} </a>
+        <button id='storyIndexEditBtn' ng-click="$ctrl.edit(story)" class="btn-floating btn-small waves-effect waves-light light-blue darken-4"><i class="material-icons">mode_edit</i></button>
+        <button id='storyIndexdeleteBtn' ng-click="$ctrl.delete(story)" class="btn-floating btn-small waves-effect waves-light red lighten-2"><i class="material-icons">delete</i></button>
+      <!--<div class="card-panel">-->
+        <!--<span class="blue-text text-darken-2">This is a card panel with dark blue text</span>-->
+      <!--</div>-->
     </article>
   </li>
 </ul>
-<a class="btn-floating btn-large waves-effect waves-light red" ui-sref="storyNew"><i class="material-icons">add</i></a>
+</div>
+
+<div id="addStory">
+  <a  ui-sref='storyNew'><img id='addStoryBtn' src="/images/addStoryBtn2.png"></a>
+    <!--<a ui-sref='storyNew' id='addStoryBtn' class="btn-floating btn-large waves-effect waves-light "><i class="material-icons">add</i></a>-->
+</div>

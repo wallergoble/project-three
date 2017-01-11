@@ -11,9 +11,23 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('index', {
 		url: '/index',
 		template: `
+
 	<h1> My Story Books </h1>
-		<login></login>
-		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Parent / Teacher Log In</span>
+              <p>Please log your children in using your parent/teacher Username and password.</p>
+              <p>If you haven't signed up yet, please follow the link below to create an account! </p>
+              <login></login>
+            </div>
+            <div class="card-action">  
+              <a ui-sref="signup">Sign Up!</a>
+            </div>
+          </div>
+        </div>
+      </div> 
 		`
 	})
 	.state('signup', {
@@ -83,7 +97,7 @@ myApp.controller('indexCtrl', function(storyService, $stateParams, $state) {
 // New Story Controller
 myApp.controller('newCtrl', function(storyService, $state) {
 	this.story = {
-		title		 :  '',
+		title	 :  '',
 		name     :  '',
 		animal   :  '',
 		place    :  ''

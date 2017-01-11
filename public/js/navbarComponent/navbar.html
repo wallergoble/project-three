@@ -1,16 +1,18 @@
-<nav>
+<nav id="navbar">
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Logo</a>
 
-
+    <a ui-sref='storyIndex'>
+        <img id='homeBtn' src="/images/512x512.png" alt="HTML tutorial">
+      <!--<a href='storyIndex' id='homeBtn'><i class="material-icons">home</i></a>-->
+    </a>
+    <a class="brand-logo">{{$ctrl.username}}'s Stories </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyNew') }"><a ui-sref="storyNew">New</a></li>
-      <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyIndex') }"><a ui-sref="storyIndex">All My Stories</a></li>
-      <li  ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyShow') }"><a ui-sref="storyShow">Show</a></li>
-      <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyEdit') }"><a ui-sref="storyEdit">Edit</a></li>
+      <!--<li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyNew') }"><a ui-sref="storyNew">New</a></li>-->
+      <!--<li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyIndex') }"<a ui-sref="storyIndex">All My Stories</a></li>-->
+      <!--<li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyShow') }"><a ui-sref="storyShow">Show</a></li>-->
+      <!--<li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyEdit') }"><a ui-sref="storyEdit">Edit</a></li>-->
       <li ng-hide="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('signup') }"><a ui-sref="signup">Sign Up</a></li>
-      <li ng-show="$ctrl.Auth.isLoggedIn()"  ng-click="$ctrl.logout()"><a ui-sref="logout">Logout</a></li>
-      <li ng-show="$ctrl.Auth.isLoggedIn()" class="navbar-text">Signed in as {{ $ctrl.Auth.getCurrentUser() }}</li>
+      <li ng-show="$ctrl.Auth.isLoggedIn()" ng-click="$ctrl.logout()"><a ui-sref="logout">Logout</a></li>
 
     </ul>
   </div>

@@ -64,14 +64,23 @@
                placeholder="Place"
                ng-model="$ctrl.story.place">
        </div>
-
+       <!--Status Dash Board-->
        <div class="statusBar"> 
         <h1>Quick and dirty status bar </h1>
         <h3>Title: {{$ctrl.story.title}} </h3>
-        
         <h3>Name: {{$ctrl.story.name}} </h3>
         <h3>Animal {{$ctrl.story.animal}} </h3>
         <h3>Place: {{$ctrl.storyPlace}} </h3>
+        <!--Progress bar-->
+        <div class="progress">
+            <div class="determinate" 
+                ng-class="{ true: '.noProgress' }[$ctrl.story.title ===  '']"
+                ng-class="{ true: '.fourthProgress' }[$ctrl.story.title !==  '']"
+                ng-class="{ true: '.halfProgress' }[$ctrl.story.name !==  '']"
+                ng-class="{ true: '.threeFourthsProgress' }[$ctrl.story.animal !==  '']"
+                ng-class="{ true: '.fullProgress' }[$ctrl.story.place !==  '']"
+                ></div>
+        </div>    
        </div> 
        <br>
        <input id="storyNewSaveBtn" class="waves-effect waves-light btn" type="submit" value="Save" >

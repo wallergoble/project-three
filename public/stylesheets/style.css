@@ -1,9 +1,7 @@
 body {
   padding: 50px;
 }
-.test {
-  background-color: red;
-}
+
 #storyList {
   float: left;
   border: 1px solid lightgray;
@@ -105,4 +103,21 @@ body {
   /*background-image: url("/images/512x512.png");*/
 }
 
-
+/*Progress Bar Classes*/
+/*These need to be adjusted based on how many form inputs there are in New Story*/
+/*Currently there are 4*/
+.noProgress{
+  width: 0%;
+}
+.fourthProgress{
+  width: 25%;
+}
+.halfProgress {
+  width: 50%;
+}
+.threeFourthsProgress{
+  width: 75%;
+}
+.fullProgress{
+  width: 100%;
+}

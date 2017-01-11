@@ -1,7 +1,45 @@
- <form class="loginForm"
-        name="loginForm"
-        ng-submit="$ctrl.login(loginForm)" novalidate>
+<nav id="navbar">
+  <h2> My Story Books </h2>
+</nav>
 
+<div id="loginCard">
+<div class="row valign-wrapper">
+  <div class="col s6 offset-s3 valign">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"><h4>Parent / Teacher Log In</h4></span>
+          <p>Please log your children in using your parent/teacher Username and password.</p>
+          <p>If you haven't signed up yet, please follow the link below to create an account! </p>
+          <br>
+        <form class="loginForm"
+              name="loginForm"
+              ng-submit="$ctrl.login(loginForm)" novalidate>
+
+            <input type="email"
+                   id="username"
+                   placeholder="email"
+                   name="username"
+                   ng-model="$ctrl.user.username"
+                   class="form-control" required />
+
+           <input type="password"
+                   id="password"
+                   placeholder="password"
+                   name="password"
+                   ng-model="$ctrl.user.password"
+                   class="form-control" required />
+
+          <button id="loginBtn"  class="waves-effect waves-light btn" type="submit">Log in</button>
+          <button id="signUpBtn" class="waves-effect waves-light btn" ui-sref="signup">Sign Up!</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<<<<<<< HEAD
     <fieldset class="form-group">
 
       <input type="email"
@@ -30,5 +68,49 @@
     <button type="submit"
             class="waves-effect waves-light btn">Log in
     </button>
+=======
+
+
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-sm-12">-->
+      <!--<h1>Login</h1>-->
+    <!--</div>-->
+    <!--<div class="col-sm-12">-->
+      <!--<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>-->
+      <!--<form class="form"  method="POST" action="/index" name="form" ng-submit="login()" novalidate>-->
+        <!--<div class="form-group">-->
+
+          <!--<label>Email</label>-->
+
+          <!--<input type="email" name="email" class="form-control" ng-model="user.email" required>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<label>Password</label>-->
+          <!--<input type="password" name="password" class="form-control" ng-model="user.password" required>-->
+        <!--</div>-->
+        <!--<div class="form-group has-error">-->
+
+
+          <!--<p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && form.submitted">-->
+            <!--Please enter your email and password.-->
+          <!--</p>-->
+          <!--<p class="help-block" ng-show="form.email.$error.email && form.submitted">-->
+            <!--Please enter a valid email.-->
+          <!--</p>-->
+          <!--<p class="help-block">{{ form.errors.login }}</p>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<button class="btn btn-inverse btn-lg btn-login" type="submit">-->
+            <!--Login-->
+          <!--</button>-->
+
+        <!--</div>-->
+      <!--</form>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<hr>-->
+<!--</div>-->
+>>>>>>> 12d560c3933b4558e82dc39ac0a3786d6178a025
 
   </form>

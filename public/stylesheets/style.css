@@ -106,6 +106,10 @@ body {
   background-color: red;
 }
 
+.radioGroup {
+  display: inline-block;
+}
+
 /*Progress Bar Classes*/
 /*These need to be adjusted based on how many form inputs there are in New Story*/
 /*Currently there are 4*/

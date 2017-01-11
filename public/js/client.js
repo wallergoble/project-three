@@ -18,19 +18,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 	.state('storyIndex', {
 		url: '/my-library',
-		templateUrl: 'js/stories/storyIndexComponent/storyIndex.html',
+		templateUrl: 'js/stories/storyIndex/storyIndex.html',
 		controller: 'indexCtrl',
 		controllerAs: '$ctrl'
 	})
 	.state('storyNew', {
 		url: '/new',
-		templateUrl: 'js/stories/storyNewComponent/storyNew.html',
+		templateUrl: 'js/stories/storyNew/storyNew.html',
 		controller: 'newCtrl',
 		controllerAs: '$ctrl'
 	})
 	.state('storyShow', {
 		url: '/show/:id',
-		templateUrl: 'js/stories/storyShowComponent/storyShow.html',
+		templateUrl: 'js/stories/storyShow/storyShow.html',
 		controller: 'showCtrl',
     controllerAs: '$ctrl'
 	})
@@ -41,105 +41,3 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		controllerAs: '$ctrl'
 	});
 });
-
-// Index controller
-myApp.controller('indexCtrl', function(storyService, $stateParams, $state) {
-	// We set this value to be able to access the result of getStories
-	this.stories = null;
-
-	this.getStories = function() {
-		storyService.getStories()
-		.then( res => {
-			this.stories = res.data
-		});
-	};
-	// We have to call this function to render stories on initial view rendering
-	this.getStories();
-
-	// Helper function to link index and individual show routes
-	this.show = function(story) {
-		$state.go('storyShow', { id: story._id });
-	};
-
-	// Helper function to link to edit
-	this.edit = function(story) {
-		$state.go('storyEdit', { id: story._id });
-	};
-
-	this.delete = function(story) {
-		console.log('this is story we are going to delete:', story);
-		storyService.delete(story)
-		.then( res => {
-			this.getStories();
-			$state.go('storyIndex');
-		});
-	};
-});
-
-// New Story Controller
-myApp.controller('newCtrl', function(storyService, $state) {
-	this.story = {
-		title	 :  '',
-		name     :  '',
-		animal   :  '',
-		place    :  ''
-	};
-	this.save = function() {
-		console.log('about to save some shit...');
-		storyService.create(this.story)
-		.then( res => {
-			$state.go('storyShow', { id: this.story._id });
-		});
-	};
-});
-
-// Show Story Controller
-myApp.controller('showCtrl', function(storyService, $stateParams) {
-	this.story = null;
-	storyService.getStory($stateParams.id)
-	.then( res => {
-		console.log(res.data);
-		this.story = res.data;
-	});
-	console.log(this.story);
-});
-
-// const myApp = angular.module('storyBook', ['ui.router']);
-//
-// myApp.config(function($stateProvider, $urlRouterProvider) {
-//
-// 	// If the user goes astray, redirect to /home
-// 	$urlRouterProvider.otherwise('/index');
-//
-// 	$stateProvider
-// 	.state('index', {
-// 		url: '/index',
-// 		template: `
-// 		<h1> Welcome to our app </h1>
-// 		<login></login>
-// 		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
-// 		`
-// 	})
-// 	.state('signup', {
-// 		url: '/signup',
-// 		template: '<signup></signup>'
-// 	})
-// 	.state('storyIndex', {
-// 		url: '/my-library',
-// 		template: '<storyIndex></storyIndex>',
-// 	})
-// 	.state('storyNew', {
-// 		url: '/new',
-// 		template: '<storyNew></storyNew>'
-// 	})
-// 	.state('storyShow', {
-// 		url: '/show/:id',
-// 		templateUrl: 'js/stories/storyShowComponent/storyShow.html',
-// 		controller: 'showCtrl',
-//     controllerAs: '$ctrl'
-// 	})
-// 	.state('storyEdit', {
-// 		url: '/edit/:id',
-// 		template: '<storyEdit></storyEdit>'
-// 	});
-// });

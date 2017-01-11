@@ -11,18 +11,17 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/signup', function(req, res) {
-    User.register(new User({username: req.body.username }),
-                            req.body.password,
-                            function(err, account) {
+    var newUser= new User({ username: req.body.username });
+    User.register(newUser, req.body.password, function(err, user) {
             if (err) {
                 return res.status(500).json({
                     err: err
                 });
             }
             passport.authenticate('local')(req, res, function () {
-
-                res.json({username: User.local.username});
-
+                return res.status(200).json({
+                    status: 'Registration successful!'
+                });
             });
         });
 });
@@ -30,30 +29,30 @@ router.post('/signup', function(req, res) {
 
 router.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
-        if (err) {
-            return next(err);
+        var error= err ||info;
+        if (error) {
+            return res.status(401).json(error);
         }
         if (!user) {
-            return res.status(401).json({
-                err: info
+            return res.status(404).json({ message:'Something went wrong, please try again!'
             });
         }
         req.login(user, function(err) {
             if (err) {
-                return res.status(500).json({
-                    err: 'Could not log in user'
+                return res.status(401).json({
+                    res.json({username: user.username});
                 });
             }
-            res.json({username: User.local.username});
+            // res.status(200).json({
+            //     status: 'Login successful!'
+            // });
         });
     })(req, res, next);
 });
 
 router.get('/logout', function(req, res) {
     req.logout();
-    res.status(200).json({
-        status: 'Bye!'
-    });
+    res.sendstatus(200);
 });
 
 

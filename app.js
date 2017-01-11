@@ -63,38 +63,15 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
-// passport.use(new LocalStrategy({
-//         usernameField: 'email'
-//     },
-//     function(username, password, done) {
-//         User.findOne({ email: username }, function (err, user) {
-//             if (err) { return done(err); }
-//             // Return if user not found in database
-//             if (!user) {
-//                 return done(null, false, {
-//                     message: 'User not found'
-//                 });
-//             }
-//             // Return if password is wrong
-//             if (!user.validPassword(password)) {
-//                 return done(null, false, {
-//                     message: 'Password is wrong'
-//                 });
-//             }
-//             // If credentials are correct, return the user object
-//             return done(null, user);
-//         });
-//     }
-// ));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
 // This middleware will allow us to use the currentUser in our views and routes.
-app.use(function (req, res, next) {
-    global.currentUser = req.user;
-    next();
-});
+// app.use(function (req, res, next) {
+//     global.currentUser = req.user;
+//     next();
+// });
 
 //ROUTES
 app.use('/', index);

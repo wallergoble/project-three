@@ -102,6 +102,9 @@ body {
   margin: 6px;
   /*background-image: url("/images/512x512.png");*/
 }
+.test {
+  background-color: red;
+}
 
 /*Progress Bar Classes*/
 /*These need to be adjusted based on how many form inputs there are in New Story*/

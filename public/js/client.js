@@ -36,7 +36,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 	.state('storyEdit', {
 		url: '/edit/:id',
-		templateUrl: 'js/stories/storyEditComponent/storyEdit.html',
+		templateUrl: 'js/stories/storyEdit/storyEdit.html',
 		controller: 'editCtrl',
 		controllerAs: '$ctrl'
 	});
@@ -102,28 +102,6 @@ myApp.controller('showCtrl', function(storyService, $stateParams) {
 		this.story = res.data;
 	});
 	console.log(this.story);
-});
-
-// Edit Story Controller
-myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
-		// put a helpful comment to why we did this
-		this.story = null;
-
-		this.show = function() {
-			$state.go('storyShow', { id: this.story._id });
-		};
-
-		this.save = function() {
-			storyService.update(this.story)
-			.then( res => {
-				$state.go('storyShow', { id: this.story._id });
-			});
-		};
-
-		storyService.getStory($stateParams.id)
-		.then( res => {
-			this.story = res.data;
-		});
 });
 
 // const myApp = angular.module('storyBook', ['ui.router']);

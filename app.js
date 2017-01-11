@@ -65,7 +65,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Configure passport with our custom configuration code
-require('./config passport/passport')(passport);
+require('./config/passport')(passport);
 
 // passport.use(new LocalStrategy(User.authenticate()));
 // passport.use(new LocalStrategy({

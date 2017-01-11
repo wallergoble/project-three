@@ -210,8 +210,10 @@ body {
 
 #statusBar {
   float: left;
-  width: 29%;
+  width: 25%;
   margin-right: 1%;
+  margin-top: 0;
+  position: fixed;
 }
 
 .storyNewcontainer {
@@ -241,6 +243,9 @@ body {
   width: 75px;
 }
 
+
+
+
 /*Progress Bar Classes*/
 /*These need to be adjusted based on how many form inputs there are in New Story*/
 /*Currently there are 4*/
@@ -259,5 +264,3 @@ body {
 .fullProgress{
   width: 100%;
 }
-
-

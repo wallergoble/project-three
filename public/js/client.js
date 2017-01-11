@@ -88,8 +88,7 @@ myApp.controller('newCtrl', function(storyService, $state) {
 		console.log('about to save some shit...');
 		storyService.create(this.story)
 		.then( res => {
-			console.log('this story got sent: ', this.story);
-			$state.go('storyIndex');
+			$state.go('storyShow', { id: this.story._id });
 		});
 	};
 });

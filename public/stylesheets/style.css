@@ -87,10 +87,9 @@ body {
   transform: translateY(4px);
 }
 
-
-
-
-
+#storyEditHeader {
+  text-align: center;
+}
 
 #storyEditSaveBtn {
   padding: 10px;

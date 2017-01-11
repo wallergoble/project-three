@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-//NEED TO Add key/value for story title
+
 var StorySchema = new mongoose.Schema({
   title:          { type: String },
   name:           { type: String,  required: true },

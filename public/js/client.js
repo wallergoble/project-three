@@ -7,7 +7,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 	// If the user goes astray, redirect to /home
 	$urlRouterProvider.otherwise('/index');
-
+	// States
 	$stateProvider
 	.state('index', {
 		url: '/index',
@@ -23,12 +23,12 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
               <p>If you haven't signed up yet, please follow the link below to create an account! </p>
               <login></login>
             </div>
-            <div class="card-action">  
+            <div class="card-action">
               <a ui-sref="signup">Sign Up!</a>
             </div>
           </div>
         </div>
-      </div> 
+      </div>
 		`
 	})
 	.state('signup', {
@@ -61,7 +61,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	});
 });
 
-// Index controller
+// INDEX CONTROLLER
 myApp.controller('indexCtrl', function(storyService, $stateParams, $state) {
 	// We set this value to be able to access the result of getStories
 	this.stories = null;
@@ -85,6 +85,7 @@ myApp.controller('indexCtrl', function(storyService, $stateParams, $state) {
 		$state.go('storyEdit', { id: story._id });
 	};
 
+	//Delete a story
 	this.delete = function(story) {
 		console.log('this is story we are going to delete:', story);
 		storyService.delete(story)
@@ -95,7 +96,7 @@ myApp.controller('indexCtrl', function(storyService, $stateParams, $state) {
 	};
 });
 
-// New Story Controller
+// NEW STORY CONTROLLER
 myApp.controller('newCtrl', function(storyService, $state) {
 	this.story = {
 		title		 :  '',
@@ -103,32 +104,35 @@ myApp.controller('newCtrl', function(storyService, $state) {
 		animal   :  '',
 		place    :  ''
 	};
+
+	//save our story
 	this.save = function() {
-		console.log('about to save some shit...');
+		console.log('about to save some stories...');
 		storyService.create(this.story)
 		.then( res => {
-			console.log('this story got sent: ', this.story);
 			$state.go('storyIndex');
 		});
 	};
 });
 
-// Show Story Controller
+// SHOW STORY CONTROLLER
 myApp.controller('showCtrl', function(storyService, $stateParams) {
 	this.story = null;
+
+	//get story by ID
 	storyService.getStory($stateParams.id)
 	.then( res => {
 		console.log(res.data);
 		this.story = res.data;
-	});
+		});
 	console.log(this.story);
-});
+	});
 
-// Edit Story Controller
+// EDIT STORY CONTROLLER
 myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
-		// put a helpful comment to why we did this
 		this.story = null;
 
+		//Take me to the story
 		this.show = function() {
 			$state.go('storyShow', { id: this.story._id });
 		};

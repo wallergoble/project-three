@@ -1,9 +1,9 @@
 var express = require('express');
-var router = express.Router();
+var router  = express.Router();
 
+var Story   = require('../models/story');
 
-var Story = require('../models/story');
-
+//error handler
 function makeError(res, message, status) {
   res.statusCode = status;
   var error = new Error(message);
@@ -11,8 +11,8 @@ function makeError(res, message, status) {
   return error;
 }
 
-// INDEX
-// get all the story and return as JSON data
+// INDEX ROUTE
+//get all the stories and return as JSON data
 router.get('/', function(req, res, next) {
   console.log('about to find some stories...');
   Story.find().sort('-createdAt')
@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// NEW
+// NEW STORY ROUTE
 router.post('/', function(req, res, next) {
   console.log('hello from post router');
   let story = new Story({
@@ -44,7 +44,7 @@ router.post('/', function(req, res, next) {
   });
 });
 
-// SHOW
+// SHOW ROUTE
 // return data for a single story as JSON
 router.get('/:id', function(req, res, next) {
   Story.findById(req.params.id)
@@ -57,7 +57,7 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-// UPDATE
+// UPDATE ROUTE
 router.put('/:id', function(req, res, next) {
   Story.findById(req.params.id)
   .then(function(story) {
@@ -76,15 +76,15 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
-// DELETE
+// DELETE ROUTE
 router.delete('/:id', function(req, res, next) {
-   console.log('Trying to delete story with id:', req.params.id);
-   Story.findByIdAndRemove(req.params.id, function(err) {
-       if(err){
-           return next(err);
-       } else {
-           res.sendStatus(200);
-       }
+  console.log('Trying to delete story with id:', req.params.id);
+  Story.findByIdAndRemove(req.params.id, function(err) {
+    if(err){
+      return next(err);
+    } else {
+      res.sendStatus(200);
+    }
    });
 });
 

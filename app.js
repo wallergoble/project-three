@@ -13,9 +13,7 @@ var User = require('./models/user');
 
 mongoose.Promise = require('bluebird');
 
-
-//ROUTES
-
+// ROUTES
 var index = require('./routes/index');
 var users = require('./routes/users');
 var stories = require('./routes/stories');
@@ -37,7 +35,7 @@ mongoose.connection.once('open', function() {
   console.log("Mongoose has connected to MongoDB!");
 });
 
-// view engine setup
+// View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -52,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
-//PASSPORT CONFIG
+// PASSPORT CONFIG
 app.use(require('express-session')({
     secret: 'I love cats too',
     resave: false,
@@ -89,32 +87,31 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
 // This middleware will allow us to use the currentUser in our views and routes.
 app.use(function (req, res, next) {
     global.currentUser = req.user;
     next();
 });
 
-//ROUTES
+// ROUTES
 app.use('/', index);
 app.use('/users', users);
 app.use('/api/stories', stories);
 
-// catch 404 and forward to error handler
+// Catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-// error handler
+// Error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  // Set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
+  // Render the error page
   res.status(err.status || 500);
   res.render('error');
 });

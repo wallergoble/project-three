@@ -1,5 +1,4 @@
 'use strict'; // Keeps our code clean
-angular.module('app', ['ngAnimate']);
 
 const myApp = angular.module('storyBook', ['ui.router']);
 

@@ -1,50 +1,59 @@
 <navbar></navbar>
 
-<main class="storyShowContainer">
-    <section id="titleSection" class="showSection">
-        <article class="textSide">
-            <h4>{{$ctrl.story.title}} </h4>
-        </article>
-        <article>
 
-        </article>
-        <article>
-            <h4>Put an image and block align me</h4>
-        </article>
+<div class="storyShowContainer">
+    <article>
+
+    <section id="titleSection">
+        <div>
+            <h2>{{$ctrl.story.title}} </h2>
+        </div>
+        <div>
+            <p>Put an image and block align me</p>
+        </div>
     </section>
+
     <section id="animalSection" class="showSection">
-        <article class="textSide">
+        <div class="textSide">
             <h4>{{$ctrl.story.name}} the {{$ctrl.story.animal}} </h4>
-        </article>
-        <article class="imageSide"
+        </div>
+        <div class="imageSide"
                  ng-class="{ true: 'catPicture' }[$ctrl.story.animal === 'cat']"
                  ng-class="{ true: 'dogPicture' }[$ctrl.story.animal === 'dog']"
                  ng-class="{ true: 'bunnyPicture' }[$ctrl.story.animal === 'bunny']">
-            <h2>Put an image and block align me</h2>
-        </article>
+            <h4>Put an image and block align me</h4>
+        </div>
     </section>
+
     <section id="placeSection" class="showSection">
-        <article class="textSide">
+        <div class="textSide">
             <h4> went to the {{$ctrl.story.place}} </h4>
-        </article>
-        <article class="imageSide"
+        </div>
+        <div class="imageSide"
                  ng-class="{ true: 'beachPicture' }[$ctrl.story.place === 'beach']"
                  ng-class="{ true: 'mountainsPicture' }[$ctrl.story.place === 'mountains']">
             <h4>Put an image and block align me</h4>
-        </article>
+        </div>
     </section>
+
     <section id="fillerSection" class="showSection">
-        <article class="textSide">
+        <div class="textSide">
             <h4> and had a great time with all their friends </h4>
-        </article>
-        <article class="imageSide">
-            <h2>Put an image of friends and block align me</h2>
-        </article>
+        </div>
+        <div class="imageSide">
+            <h4>Put an image and block align me</h4>
+        </div>
     </section>
-    <section id="endSection" class="showSection">
-        <article class="textSide">
-            <h4> The End </h4>
-        </article>
+
+
+    <section id="endSection">
+        <div>
+            <h2> The End </h2>
+        </div>
+    </section>
+
         <br>
         <button id='storyShowBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Back</button>
-    </section>
+
+    </article>
+</div>

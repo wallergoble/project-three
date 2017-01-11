@@ -105,15 +105,75 @@ body {
   /*background-image: url("/images/512x512.png");*/
 }
 
+
 .storyshowcontainer {
-  width: 1200px;
+  box-sizing:border-box;
+  text-align: center;
 }
 
-.imageSide {
-  float: right;
+#titleSection {
+  width: 99%;
+  text-align: center;
 }
 
-.textSide {
+.showSection .textSide {
+  /*height: 100px;*/
   float: left;
+  width: 49%;
 }
+
+.showSection .imageSide {
+  /*height: 100px;*/
+  float: right;
+  width: 49%;
+}
+
+.showSection {
+  height: 100px;
+  margin: 2px;
+  border: 1px solid black;
+  vertical-align: center;
+}
+
+#endSection {
+  width: 99%;
+  text-align: center;
+}
+/*#animalSection .textSide {*/
+  /*height: 100px;*/
+  /*float: left;*/
+  /*width: 49%;*/
+/*}*/
+
+/*#animalSection .imageSide {*/
+  /*height: 100px;*/
+  /*float: right;*/
+  /*width: 49%;*/
+/*}*/
+/*#placeSection .textSide {*/
+  /*height: 100px;*/
+  /*float: left;*/
+  /*width: 49%;*/
+/*}*/
+
+/*#placeSection .imageSide {*/
+  /*height: 100px;*/
+  /*float: right;*/
+  /*width: 49%;*/
+/*}*/
+
+/*#fillerSection .textSide {*/
+  /*height: 100px;*/
+  /*float: left;*/
+  /*width: 49%;*/
+/*}*/
+
+/*#fillerSection .imageSide {*/
+  /*height: 100px;*/
+  /*float: right;*/
+  /*width: 49%;*/
+/*}*/
+
+
+
 

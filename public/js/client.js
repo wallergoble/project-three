@@ -97,7 +97,7 @@ myApp.controller('indexCtrl', function(storyService, $stateParams, $state) {
 // New Story Controller
 myApp.controller('newCtrl', function(storyService, $state) {
 	this.story = {
-		title		 :  '',
+		title	 :  '',
 		name     :  '',
 		animal   :  '',
 		place    :  ''

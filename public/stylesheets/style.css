@@ -90,6 +90,13 @@ body {
   margin: 6px;
   /*background-image: url("/images/512x512.png");*/
 }
+.test {
+  background-color: red;
+}
+
+.radioGroup {
+  display: inline-block;
+}
 
 
 .storyshowcontainer {
@@ -202,3 +209,23 @@ body {
   height: 45px;
   width: 75px;
 }
+
+/*Progress Bar Classes*/
+/*These need to be adjusted based on how many form inputs there are in New Story*/
+/*Currently there are 4*/
+.noProgress{
+  width: 0%;
+}
+.fourthProgress{
+  width: 25%;
+}
+.halfProgress {
+  width: 50%;
+}
+.threeFourthsProgress{
+  width: 75%;
+}
+.fullProgress{
+  width: 100%;
+}
+

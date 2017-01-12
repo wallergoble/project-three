@@ -18,26 +18,18 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 	.state('storyIndex', {
 		url: '/my-library',
-		templateUrl: 'js/stories/storyIndex/storyIndex.html',
-		controller: 'indexCtrl',
-		controllerAs: '$ctrl'
+		template: '<story-index></story-index>'
 	})
 	.state('storyNew', {
 		url: '/new',
-		templateUrl: 'js/stories/storyNew/storyNew.html',
-		controller: 'newCtrl',
-		controllerAs: '$ctrl'
+		template: '<story-new></story-new>'
 	})
 	.state('storyShow', {
 		url: '/show/:id',
-		templateUrl: 'js/stories/storyShow/storyShow.html',
-		controller: 'showCtrl',
-    controllerAs: '$ctrl'
+		template: '<story-show></story-show>'
 	})
 	.state('storyEdit', {
 		url: '/edit/:id',
-		templateUrl: 'js/stories/storyEdit/storyEdit.html',
-		controller: 'editCtrl',
-		controllerAs: '$ctrl'
+		template: '<story-edit></story-edit>'
 	});
 });

@@ -16,7 +16,8 @@ myApp.service('Auth', [ '$http','$q',
         this.login = function(credentials) {
             return $http.post('/login', credentials)
                     .then(res => {
-                        currentUser = res.data;
+                        currentUser = res.data.user;
+                        console.log('currentUser:', currentUser);
                     })
                     .catch(err => {
                         console.log('ERROR:', err);

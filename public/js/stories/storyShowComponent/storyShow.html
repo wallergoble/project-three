@@ -5,10 +5,11 @@
 
     <section id="titleSection">
         <div>
-            <h2>{{$ctrl.story.title}} </h2>
+            <h3>{{$ctrl.story.title}} </h3>
         </div>
     </section>
 
+    <div id="storyShowScroll">
     <section id="animalSection" class="showSection">
         <div class="textSide">
             <h4>{{$ctrl.story.name}} the {{$ctrl.story.animal}} </h4>
@@ -39,12 +40,14 @@
         </div>
     </section>
 
+        <section id="endSection">
+            <div>
+                <h2> The End </h2>
+            </div>
+        </section>
+    </div>
 
-    <section id="endSection">
-        <div>
-            <h2> The End </h2>
-        </div>
-    </section>
+
 
         <br>
         <button id='storyShowBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Back</button>

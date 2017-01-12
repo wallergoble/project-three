@@ -149,51 +149,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 220px;
+  height: 400px;
   margin: 2px;
   border: 1px solid black;
   vertical-align: middle;
+  width: 100%;
+  scroll-snap-coordinate: 50% 50%;
 }
 
 #endSection {
   width: 99%;
   text-align: center;
 }
-/*#animalSection .textSide {*/
-  /*height: 100px;*/
-  /*float: left;*/
-  /*width: 49%;*/
-/*}*/
 
-/*#animalSection .imageSide {*/
-  /*height: 100px;*/
-  /*float: right;*/
-  /*width: 49%;*/
-/*}*/
-/*#placeSection .textSide {*/
-  /*height: 100px;*/
-  /*float: left;*/
-  /*width: 49%;*/
-/*}*/
-
-/*#placeSection .imageSide {*/
-  /*height: 100px;*/
-  /*float: right;*/
-  /*width: 49%;*/
-/*}*/
-
-/*#fillerSection .textSide {*/
-  /*height: 100px;*/
-  /*float: left;*/
-  /*width: 49%;*/
-/*}*/
-
-/*#fillerSection .imageSide {*/
-  /*height: 100px;*/
-  /*float: right;*/
-  /*width: 49%;*/
-/*}*/
-
+#storyshowscroll {
+  margin: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 0;
+  width: 90%;
+  height: 400px;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100%);
+  scroll-snap-destination: 50% 50%;
+}
 
 #storyNewHeader {
   text-align: center;

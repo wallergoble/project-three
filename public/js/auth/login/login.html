@@ -1,0 +1,46 @@
+<nav id="navbar">
+  <h2> Storyify </h2>
+</nav>
+
+<div id="loginCard">
+<div class="row valign-wrapper">
+  <div class="col s6 offset-s3 valign">
+    <div class="card  light-blue darken-2">
+      <div class="card-content white-text">
+        <span class="card-title"><h4>Parent / Teacher Log In</h4></span>
+          <p>Please log your children in using your parent/teacher Username and password.</p>
+          <p>If you haven't signed up yet, please follow the link below to create an account! </p>
+          <br>
+        <form class="loginForm"
+              name="loginForm"
+              ng-submit="$ctrl.login(loginForm)"
+              novalidate>
+
+            <input type="email"
+                   id="username"
+                   placeholder="email"
+                   name="username"
+                   ng-model="$ctrl.user.username"
+                   class="form-control"
+                   required />
+
+           <input type="password"
+                   id="password"
+                   placeholder="password"
+                   name="password"
+                   ng-model="$ctrl.user.password"
+                   class="form-control"
+                   required />
+
+          <button id="loginBtn"  class="waves-effect waves-light red lighten-2 btn" type="submit">Log in</button>
+          <button id="signUpBtn" class="waves-effect waves-light red lighten-2 btn" ui-sref="signup">Sign Up!</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+

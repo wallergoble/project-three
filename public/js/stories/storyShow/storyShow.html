@@ -1,0 +1,57 @@
+<navbar></navbar>
+
+<div class="storyShowContainer">
+    <article>
+
+    <section id="titleSection">
+        <div>
+            <h2>{{$ctrl.story.title}} </h2>
+        </div>
+    </section>
+
+    <div id="storyShowScroll">
+    <section id="animalSection" class="card-panel">
+
+        <div class="textSide">
+            <h4>{{$ctrl.story.name}} the {{$ctrl.story.animal}} </h4>
+        </div>
+        <div class="imageSide">
+                 <img src="/images/black-cat-icon.png" ng-show="$ctrl.story.animal === 'cat'">
+                 <img src="/images/brown-dog-icon.png" ng-show="$ctrl.story.animal === 'dog'">
+                 <img src="/images/rabbit-icon.png" ng-show="$ctrl.story.animal === 'bunny'">
+        </div>
+    </section>
+
+    <section id="placeSection" class="card-panel">
+        <div class="textSide">
+            <h4> went to the {{$ctrl.story.place}} </h4>
+        </div>
+        <div class="imageSide">
+                 <img src="/images/beach-icon.png" ng-show="$ctrl.story.place === 'beach'">
+                 <img src="/images/mountain-icon.png" ng-show="$ctrl.story.place === 'mountain'">
+                 <img src="/images/moon-icon.png" ng-show="$ctrl.story.place === 'outerSpace'">
+        </div>
+    </section>
+
+    <section id="fillerSection" class="card-panel">
+        <div class="textSide">
+            <h4> and had a great time with all their friends </h4>
+        </div>
+        <div class="imageSide">
+        </div>
+    </section>
+
+        <section id="endSection">
+            <div>
+                <h3> The End </h3>
+            </div>
+        </section>
+    </div>
+
+
+
+        <br>
+        <button id='storyShowBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Back</button>
+
+    </article>
+</div>

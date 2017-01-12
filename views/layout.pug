@@ -1,9 +1,10 @@
 html
 	head
-		title Story Book App
+		title Storyify
 		link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Quicksand")
 
 	body(ng-app='storyBook')
 		ui-view
@@ -15,12 +16,13 @@ html
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js')
 		script(src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js")
 		script(src='/js/client.js')
-		script(src='/js/stories/storyEditComponent/storyEdit.component.js')
-		script(src='/js/stories/storyIndexComponent/storyIndex.component.js')
-		script(src='/js/stories/storyNewComponent/storyNew.component.js')
-		script(src='/js/stories/storyShowComponent/storyShow.component.js')
+		script(src='/js/stories/progressDashboard/progressDashboard.component.js')
+		script(src='/js/stories/storyEdit/storyEdit.component.js')
+		script(src='/js/stories/storyIndex/storyIndex.component.js')
+		script(src='/js/stories/storyNew/storyNew.component.js')
+		script(src='/js/stories/storyShow/storyShow.component.js')
 		script(src='/js/stories/story.service.js')
 		script(src='/js/auth/auth.service.js')
-		script(src='/js/auth/loginComponent/login.component.js')
-		script(src='/js/auth/signupComponent/signup.component.js')
-		script(src='/js/navbarComponent/navbar.js')
+		script(src='/js/auth/login/login.component.js')
+		script(src='/js/auth/signup/signup.component.js')
+		script(src='/js/navbar/navbar.js')

@@ -8,160 +8,60 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/index');
 
 	$stateProvider
+
+	// Landing page, primarily filled with login component
 	.state('index', {
 		url: '/index',
 		template: `<login></login>`
 	})
+
+	// Sign up view
 	.state('signup', {
 		url: '/signup',
 		template: '<signup></signup>'
 	})
+
+	// Shows all of a user's stories
 	.state('storyIndex', {
 		url: '/my-library',
-		templateUrl: 'js/stories/storyIndexComponent/storyIndex.html',
-		controller: 'indexCtrl',
-		controllerAs: '$ctrl'
+		template: '<story-index></story-index>',
+		onEnter: function(Auth, $state) {
+			if (!Auth.isLoggedIn()) {
+				$state.go('index', {});
+			}
+		}
 	})
+
+	// Form to create a new story
 	.state('storyNew', {
 		url: '/new',
-		templateUrl: 'js/stories/storyNewComponent/storyNew.html',
-		controller: 'newCtrl',
-		controllerAs: '$ctrl'
+		template: '<story-new></story-new>',
+		onEnter: function(Auth, $state) {
+			if (!Auth.isLoggedIn()) {
+				$state.go('index', {});
+			}
+		}
 	})
+
+	// Show a singular story
 	.state('storyShow', {
 		url: '/show/:id',
-		templateUrl: 'js/stories/storyShowComponent/storyShow.html',
-		controller: 'showCtrl',
-    controllerAs: '$ctrl'
+		template: '<story-show></story-show>',
+		onEnter: function(Auth, $state) {
+			if (!Auth.isLoggedIn()) {
+				$state.go('index', {});
+			}
+		}
 	})
+
+	// Edit a story
 	.state('storyEdit', {
 		url: '/edit/:id',
-		templateUrl: 'js/stories/storyEditComponent/storyEdit.html',
-		controller: 'editCtrl',
-		controllerAs: '$ctrl'
+		template: '<story-edit></story-edit>',
+		onEnter: function(Auth, $state) {
+			if (!Auth.isLoggedIn()) {
+				$state.go('index', {});
+			}
+		}
 	});
 });
-
-// Index controller
-myApp.controller('indexCtrl', function(storyService, $stateParams, $state) {
-	// We set this value to be able to access the result of getStories
-	this.stories = null;
-
-	this.getStories = function() {
-		storyService.getStories()
-		.then( res => {
-			this.stories = res.data
-		});
-	};
-	// We have to call this function to render stories on initial view rendering
-	this.getStories();
-
-	// Helper function to link index and individual show routes
-	this.show = function(story) {
-		$state.go('storyShow', { id: story._id });
-	};
-
-	// Helper function to link to edit
-	this.edit = function(story) {
-		$state.go('storyEdit', { id: story._id });
-	};
-
-	this.delete = function(story) {
-		console.log('this is story we are going to delete:', story);
-		storyService.delete(story)
-		.then( res => {
-			this.getStories();
-			$state.go('storyIndex');
-		});
-	};
-});
-
-// New Story Controller
-myApp.controller('newCtrl', function(storyService, $state) {
-	this.story = {
-		title	 :  '',
-		name     :  '',
-		animal   :  '',
-		place    :  ''
-	};
-	this.save = function() {
-		console.log('about to save some shit...');
-		storyService.create(this.story)
-		.then( res => {
-			$state.go('storyShow', { id: this.story._id });
-		});
-	};
-});
-
-// Show Story Controller
-myApp.controller('showCtrl', function(storyService, $stateParams) {
-	this.story = null;
-	storyService.getStory($stateParams.id)
-	.then( res => {
-		console.log(res.data);
-		this.story = res.data;
-	});
-	console.log(this.story);
-});
-
-// Edit Story Controller
-myApp.controller('editCtrl', function(storyService, $state, $stateParams) {
-		// put a helpful comment to why we did this
-		this.story = null;
-
-		this.show = function() {
-			$state.go('storyShow', { id: this.story._id });
-		};
-
-		this.save = function() {
-			storyService.update(this.story)
-			.then( res => {
-				$state.go('storyShow', { id: this.story._id });
-			});
-		};
-
-		storyService.getStory($stateParams.id)
-		.then( res => {
-			this.story = res.data;
-		});
-});
-
-// const myApp = angular.module('storyBook', ['ui.router']);
-//
-// myApp.config(function($stateProvider, $urlRouterProvider) {
-//
-// 	// If the user goes astray, redirect to /home
-// 	$urlRouterProvider.otherwise('/index');
-//
-// 	$stateProvider
-// 	.state('index', {
-// 		url: '/index',
-// 		template: `
-// 		<h1> Welcome to our app </h1>
-// 		<login></login>
-// 		<p>If you haven't signed up yet, <a ui-sref="signup"> click here </a> to sign up</p>
-// 		`
-// 	})
-// 	.state('signup', {
-// 		url: '/signup',
-// 		template: '<signup></signup>'
-// 	})
-// 	.state('storyIndex', {
-// 		url: '/my-library',
-// 		template: '<storyIndex></storyIndex>',
-// 	})
-// 	.state('storyNew', {
-// 		url: '/new',
-// 		template: '<storyNew></storyNew>'
-// 	})
-// 	.state('storyShow', {
-// 		url: '/show/:id',
-// 		templateUrl: 'js/stories/storyShowComponent/storyShow.html',
-// 		controller: 'showCtrl',
-//     controllerAs: '$ctrl'
-// 	})
-// 	.state('storyEdit', {
-// 		url: '/edit/:id',
-// 		template: '<storyEdit></storyEdit>'
-// 	});
-// });

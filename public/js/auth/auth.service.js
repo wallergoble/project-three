@@ -41,4 +41,6 @@ myApp.service('Auth', [ '$http','$q',
                         return $q.reject(err.data);
                     });
         };
+
 }]);
+

@@ -1,5 +1,5 @@
-myApp.component('storyIndex', {
-	templateUrl: '/js/stories/storyIndex/storyIndex.html',
+myApp.component('storyShow', {
+	templateUrl: '/js/stories/storyShow/storyShow.html',
 	controller: function(storyService, $stateParams) {
 		this.story = null;
 		storyService.getStory($stateParams.id)

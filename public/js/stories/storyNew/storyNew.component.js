@@ -10,7 +10,8 @@ myApp.component('storyNew', {
 		this.save = function() {
 			storyService.create(this.story)
 			.then( res => {
-				$state.go('storyShow', { id: this.story._id });
+				console.log('this is the story you just made', res);
+				$state.go('storyShow', { id: res.data._id });
 			});
 		};
 	}

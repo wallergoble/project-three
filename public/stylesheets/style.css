@@ -117,11 +117,11 @@ html {
   display: inline-flex;
 }
 
-.storyIndexEditBtns button:hover {
-  transform: translateY(2px);
+.storyIndexEditBtns button {
+  margin-right: 5px;
 }
 
-#storyIndexDeleteBtn:hover {
+.storyIndexEditBtns button:hover {
   transform: translateY(2px);
 }
 
@@ -136,6 +136,12 @@ html {
 /**/
 /*////STORY EDIT PAGE (/edit)////*/
 /**/
+.storyEditcontainer {
+  float: right;
+  width: 69%;
+  margin-right: 1%;
+}
+
 #storyEditHeader {
   text-align: center;
 }
@@ -254,12 +260,6 @@ html {
 }
 
 .storyNewcontainer {
-  float: right;
-  width: 69%;
-  margin-right: 1%;
-}
-
-.storyEditcontainer {
   float: right;
   width: 69%;
   margin-right: 1%;

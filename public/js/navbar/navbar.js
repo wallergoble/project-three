@@ -2,7 +2,7 @@ console.log('hello from navbar');
 
 
 myApp.component('navbar', {
-    templateUrl: '/js/navbarComponent/navbar.html',
+    templateUrl: '/js/navbar/navbar.html',
     controller: function (Auth, $state) {
         this.Auth = Auth;
         this.$state = $state;

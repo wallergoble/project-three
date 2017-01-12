@@ -21,7 +21,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		template: '<signup></signup>'
 	})
 
-	// Shows all of a user's stories'
+	// Shows all of a user's stories
 	.state('storyIndex', {
 		url: '/my-library',
 		template: '<story-index></story-index>'

@@ -1,6 +1,6 @@
 myApp.component('progressDashboard', {
     templateUrl: '/js/stories/progressDashboard/progressDashboard.html',
     controller: function() {
-        console.log('hello from progressDashboard');
+        // We don't actualy need any functionality here and that scares me
     }
 });

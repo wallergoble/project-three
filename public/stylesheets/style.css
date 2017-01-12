@@ -79,6 +79,16 @@ html {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 62%;
+  margin: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 0;
+  width: 94%;
+  height: 410px;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100%);
+  scroll-snap-destination: 50% 50%;
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
 }
 
 #singleStoryInList {
@@ -88,6 +98,7 @@ html {
   margin: 10px;
   font-size: x-large;
   cursor: pointer;
+  scroll-snap-coordinate: 50% 50%;
 }
 
 #addStory {
@@ -100,7 +111,7 @@ html {
   display: inline-flex;
 }
 
-#storyIndexEditBtn:hover {
+.storyIndexEditBtns button:hover {
   transform: translateY(2px);
 }
 
@@ -197,8 +208,6 @@ html {
   scroll-snap-points-y: repeat(100%);
   scroll-snap-destination: 50% 50%;
   box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
-  border-top: 1px inset lightgray;
-  border-bottom: 1px inset lightgray;
 }
 
 #endSection {

@@ -232,6 +232,12 @@ html {
   margin-right: 1%;
 }
 
+.storyEditcontainer {
+  float: right;
+  width: 69%;
+  margin-right: 1%;
+}
+
 #storyNewButtons {
   text-align: center;
   margin-top: 20px;

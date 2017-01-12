@@ -13,7 +13,9 @@
     <section id="animalSection" class="card-panel">
 
         <div class="textSide">
-            <h4>{{$ctrl.story.name}} the {{$ctrl.story.animal}} </h4>
+            <h4>{{$ctrl.story.name}} the {{$ctrl.story.animal}} was bored one day,
+                and wanted to travel somewhere
+            </h4>
         </div>
         <div class="imageSide">
                  <img src="/images/black-cat-icon.png" ng-show="$ctrl.story.animal === 'cat'">
@@ -24,7 +26,7 @@
 
     <section id="placeSection" class="card-panel">
         <div class="textSide">
-            <h4> went to the {{$ctrl.story.place}} </h4>
+            <h4> {{$ctrl.story.name}} decided to go to the {{$ctrl.story.place}} </h4>
         </div>
         <div class="imageSide">
                  <img src="/images/beach-icon.png" ng-show="$ctrl.story.place === 'beach'">
@@ -33,25 +35,58 @@
         </div>
     </section>
 
-    <section id="fillerSection" class="card-panel">
+    <section class="card-panel">
         <div class="textSide">
-            <h4> and had a great time with all their friends </h4>
+            <h4> On the way to the {{$ctrl.story.place}}, {{$ctrl.story.name}} met
+                {{$ctrl.randomNameOne}}, who was also a {{$ctrl.story.animal}}
+            </h4>
         </div>
         <div class="imageSide">
+                 <img src="/images/black-cat-icon.png" ng-show="$ctrl.story.animal === 'cat'">
+                 <img src="/images/brown-dog-icon.png" ng-show="$ctrl.story.animal === 'dog'">
+                 <img src="/images/rabbit-icon.png"    ng-show="$ctrl.story.animal === 'bunny'">
         </div>
     </section>
 
-        <section id="endSection">
-            <div>
-                <h3> The End </h3>
-            </div>
-        </section>
-    </div>
+    <section class="card-panel">
+        <div class="textSide">
+            <h4> At the {{$ctrl.story.place}}, {{$ctrl.story.name}} and {{$ctrl.randomNameOne}}
+            met a 
+            <span ng-show="$ctrl.story.place === 'beach'">whale</span>
+            <span ng-show="$ctrl.story.place === 'mountain'">bird</span>
+            <span ng-show="$ctrl.story.place === 'outerSpace'">space cow</span>
+            named {{$ctrl.randomNameTwo}}
+            </h4>
+        </div>
+        <div class="imageSide">
+                 <img src="/images/whale-icon.png" ng-show="$ctrl.story.place === 'beach'">
+                 <img src="/images/bird-icon.png" ng-show="$ctrl.story.place === 'mountain'">
+                 <img src="/images/cow-icon.png" ng-show="$ctrl.story.place === 'outerSpace'">
+        </div>
+    </section>
 
+    <section id="fillerSection" class="card-panel">
+        <div class="textSide">
+            <h4> The three of them played all day until the sun 
+                started setting and they had to go home.
+                 </h4>
+        </div>
+        <div class="imageSide">
+            <img src="/images/Sunset-icon.png">
+        </div>
+    </section>
 
-
+    <section class="card-panel">
+        <div class="textSide">
+            <h4> {{$ctrl.story.name}}, {{$ctrl.randomNameOne}}, and 
+                {{$ctrl.randomNameTwo}} are still friends to this day.
+                 </h4>
+        </div>
+        <div class="imageSide">
+            <h2> The End </h2>
+        </div>
+    </section>
         <br>
-        <button id='storyShowBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Back</button>
-
+        <button id='storyShowBackBtn' ui-sref="storyIndex" class="waves-effect waves-light btn">Return to your library</button>
     </article>
 </div>

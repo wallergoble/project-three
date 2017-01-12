@@ -1,8 +1,22 @@
+/**/
+/*//// ALL PAGES ////*/
+/**/
 * {
   font-family: 'Quicksand', sans-serif;
 }
+
 body {
   padding: 50px;
+}
+
+html {
+  /*background-image: url("/images/Vector-Dreamy-Sky-by-DragonArt.png");*/
+  /*background-image: url("/images/clouds-wallpaper.png");*/
+  /*background-image: url("/images/sky-bkg.png");*/
+  background-image: url("/images/sky-grass.png");
+  /*background-repeat: no-repeat;*/
+  background-size: 100% 100%;
+  /*background: url("/images/sky-grass.png") no-repeat center center fixed;*/
 }
 
 #navbar {
@@ -10,6 +24,16 @@ body {
   box-shadow: 0 8px 6px -6px #999;
 }
 
+#homeBtn{
+  width: 52px;
+  height: 52px;
+  margin: 6px;
+  /*background-image: url("/images/512x512.png");*/
+}
+
+/**/
+/*////LOGIN PAGE (/login)////*/
+/**/
 #navbar h2 {
   text-align: center;
 }
@@ -25,6 +49,9 @@ body {
    margin-right: 10px;
  }
 
+/**/
+/*////SIGNUP PAGE (/signup)////*/
+/**/
 #signUpBtn{
   margin-top: 20px;
   margin-left: 10px;
@@ -40,6 +67,10 @@ body {
   margin-left: 10px;
 }
 
+
+/**/
+/*////STORY INDEX PAGE (/my-stories)////*/
+/**/
 #storyList {
   float: left;
   border: 1px solid lightgray;
@@ -64,14 +95,9 @@ body {
   margin: 8%;
 }
 
-#storyIndexEditBtn {
-  margin-right: 2px;
+.storyIndexEditBtns {
   float: right;
-}
-
-#storyIndexDeleteBtn {
-  margin-right: 4px;
-  float: right;
+  display: inline-flex;
 }
 
 #storyIndexEditBtn:hover {
@@ -90,6 +116,9 @@ body {
   transform: translateY(4px);
 }
 
+/**/
+/*////STORY EDIT PAGE (/edit)////*/
+/**/
 #storyEditHeader {
   text-align: center;
 }
@@ -110,12 +139,6 @@ body {
   height: 55px;
 }
 
-#homeBtn{
-  width: 52px;
-  height: 52px;
-  margin: 6px;
-  /*background-image: url("/images/512x512.png");*/
-}
 .test {
   background-color: red;
 }
@@ -124,6 +147,9 @@ body {
   display: inline-block;
 }
 
+/**/
+/*////STORY SHOW PAGE (/show)////*/
+/**/
 .storyshowcontainer {
   box-sizing:border-box;
   text-align: center;
@@ -180,6 +206,9 @@ body {
   text-align: center;
 }
 
+/**/
+/*////STORY NEW PAGE (/new)////*/
+/**/
 #storyNewHeader {
   text-align: center;
 }
@@ -229,9 +258,6 @@ body {
   height: 45px;
   width: 75px;
 }
-
-
-
 
 /*Progress Bar Classes*/
 /*These need to be adjusted based on how many form inputs there are in New Story*/

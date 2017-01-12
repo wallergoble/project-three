@@ -36,6 +36,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('storyNew', {
 		url: '/new',
 		template: '<story-new></story-new>',
+
         onEnter: function(Auth, $state){
             if(!Auth.isLoggedIn()) {
                 $state.go('index',{});
@@ -63,5 +64,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
                 $state.go('index',{});
             }
         }
+
+
 	});
 });

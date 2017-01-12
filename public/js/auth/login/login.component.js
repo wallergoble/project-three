@@ -1,5 +1,5 @@
 myApp.component('login', {
-  templateUrl: 'js/auth/loginComponent/login.html',
+  templateUrl: 'js/auth/login/login.html',
   controller: function(Auth, $state) {
       this.Auth = Auth;
       this.$state = $state;

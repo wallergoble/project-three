@@ -60,7 +60,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 // UPDATE
-router.put('/:id', function(req, res, next) {
+router.put('/:id',  function(req, res, next) {
   Story.findById(req.params.id)
   .then(function(story) {
     if (!story) return next(makeError(res, 'Document not found', 404));
@@ -89,5 +89,12 @@ router.delete('/:id', function(req, res, next) {
        }
    });
 });
+
+function isLoggedIn(req, res, next) {
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/login');
+}
 
 module.exports = router;

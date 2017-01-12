@@ -1,7 +1,27 @@
 <navbar></navbar>
 
 <progress-dashboard></progress-dashboard>
-
+    <!--<div id="statusBar" class="card-panel">
+        <h4>Your Story Progress:</h4>
+        <br>
+        <h6>Title: {{$ctrl.story.title}} </h6>
+        <br>
+        <h6>Name: {{$ctrl.story.name}} </h6>
+        <br>
+        <h6>Animal: {{$ctrl.story.animal}} </h6>
+        <br>
+        <h6>Place: {{$ctrl.story.place}} </h6>
+        Progress bar
+        <div class="progress">
+            <div class="determinate"
+                 ng-class="{ true: '.noProgress' }[$ctrl.story.title ===  '']"
+                 ng-class="{ true: '.fourthProgress' }[$ctrl.story.title !==  '']"
+                 ng-class="{ true: '.halfProgress' }[$ctrl.story.name !==  '']"
+                 ng-class="{ true: '.threeFourthsProgress' }[$ctrl.story.animal !==  '']"
+                 ng-class="{ true: '.fullProgress' }[$ctrl.story.place !==  '']">
+            </div>
+        </div>
+    </div>-->
 <div class="storyNewcontainer">
 <h1 id="storyNewHeader">Create a Story!</h1>
 
@@ -9,7 +29,7 @@
 
     <form ng-submit="$ctrl.save()">
 
-        <div class='card-panel'>
+        <div class ='card-panel'>
             <h4>What is the title of your story?</h4>
             <input name="title" type="text" id="titleText" ng-model="$ctrl.story.title" placeholder="Title"/>
         </div>

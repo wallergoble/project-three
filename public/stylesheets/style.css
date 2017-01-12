@@ -1,3 +1,6 @@
+* {
+  font-family: 'Quicksand', sans-serif;
+}
 body {
   padding: 50px;
 }
@@ -107,14 +110,6 @@ body {
   height: 55px;
 }
 
-#storyShowBackBtn {
-  padding: 10px;
-  font-size: 55%;
-  text-align: center;
-  vertical-align: center;
-  height:55px;
-}
-
 #homeBtn{
   width: 52px;
   height: 52px;
@@ -129,75 +124,61 @@ body {
   display: inline-block;
 }
 
-
 .storyshowcontainer {
   box-sizing:border-box;
   text-align: center;
 }
 
 #titleSection {
-  width: 99%;
+  width: 100%;
   text-align: center;
+  margin-bottom: 40px;
 }
 
-.showSection .textSide {
-  /*height: 100px;*/
+.card-panel .textSide {
   float: left;
   width: 49%;
+  /*margin-left: 2%;*/
 }
 
-.showSection .imageSide {
-  /*height: 100px;*/
+.card-panel .imageSide {
   float: right;
   width: 49%;
+  /*margin-left: 1%;*/
 }
 
-.showSection {
-  height: 100px;
-  margin: 2px;
-  border: 1px solid black;
-  vertical-align: center;
+#storyShowScroll .card-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  vertical-align: middle;
+  width: 94%;
+  scroll-snap-coordinate: 50% 50%;
+  margin-left: 30px;
+}
+
+#storyshowscroll {
+  margin: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 0;
+  width: 94%;
+  height: 410px;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100%);
+  scroll-snap-destination: 50% 50%;
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+  border-top: 1px inset lightgray;
+  border-bottom: 1px inset lightgray;
 }
 
 #endSection {
-  width: 99%;
+  width: 100%;
   text-align: center;
 }
-/*#animalSection .textSide {*/
-  /*height: 100px;*/
-  /*float: left;*/
-  /*width: 49%;*/
-/*}*/
-
-/*#animalSection .imageSide {*/
-  /*height: 100px;*/
-  /*float: right;*/
-  /*width: 49%;*/
-/*}*/
-/*#placeSection .textSide {*/
-  /*height: 100px;*/
-  /*float: left;*/
-  /*width: 49%;*/
-/*}*/
-
-/*#placeSection .imageSide {*/
-  /*height: 100px;*/
-  /*float: right;*/
-  /*width: 49%;*/
-/*}*/
-
-/*#fillerSection .textSide {*/
-  /*height: 100px;*/
-  /*float: left;*/
-  /*width: 49%;*/
-/*}*/
-
-/*#fillerSection .imageSide {*/
-  /*height: 100px;*/
-  /*float: right;*/
-  /*width: 49%;*/
-/*}*/
-
 
 #storyNewHeader {
   text-align: center;
@@ -217,6 +198,12 @@ body {
 }
 
 .storyNewcontainer {
+  float: right;
+  width: 69%;
+  margin-right: 1%;
+}
+
+.storyEditcontainer {
   float: right;
   width: 69%;
   margin-right: 1%;

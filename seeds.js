@@ -37,7 +37,7 @@ Story.remove({})
   console.log('Creating some new stories...');
   const storyOne = new Story({ title: "Christina's Story", name: 'Christina', animal: 'dog', place: 'mountain' });
   console.log(storyOne);
-  const storyTwo = new Story({ title: 'A Funny Thing Happened on the Way to the Forum', name: 'Waller', animal: 'cat', place: 'beach' });
+  const storyTwo = new Story({ title: 'A Funny Thing Happened', name: 'Waller', animal: 'cat', place: 'beach' });
   const storyThree = new Story({ title: 'Loose Change', name: 'Snuggles', animal: 'bunny', place: 'moon' });
   return Story.create([storyOne, storyTwo, storyThree]);
 })

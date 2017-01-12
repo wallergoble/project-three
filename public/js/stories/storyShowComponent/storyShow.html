@@ -7,9 +7,6 @@
         <div>
             <h2>{{$ctrl.story.title}} </h2>
         </div>
-        <div>
-            <p>Put an image and block align me</p>
-        </div>
     </section>
 
     <section id="animalSection" class="showSection">
@@ -17,9 +14,9 @@
             <h4>{{$ctrl.story.name}} the {{$ctrl.story.animal}} </h4>
         </div>
         <div class="imageSide">
-                 <img src="/images/cat.png" ng-show="$ctrl.story.animal === 'cat'">
-                 <img src="/images/dog.png" ng-show="$ctrl.story.animal === 'dog'">
-                 <img src="/images/bunny.png" ng-show="$ctrl.story.animal === 'bunny'">
+                 <img src="/images/black-cat-icon.png" ng-show="$ctrl.story.animal === 'cat'">
+                 <img src="/images/brown-dog-icon.png" ng-show="$ctrl.story.animal === 'dog'">
+                 <img src="/images/rabbit-icon.png" ng-show="$ctrl.story.animal === 'bunny'">
         </div>
     </section>
 
@@ -28,9 +25,9 @@
             <h4> went to the {{$ctrl.story.place}} </h4>
         </div>
         <div class="imageSide">
-                 <img src="/images/beach.png" ng-show="$ctrl.story.place === 'beach'">
-                 <img src="/images/mountains.png" ng-show="$ctrl.story.place === 'mountains'">
-                 <img src="/images/space.png" ng-show="$ctrl.story.place === 'outerSpace'">
+                 <img src="/images/beach-icon.png" ng-show="$ctrl.story.place === 'beach'">
+                 <img src="/images/mountain-icon.png" ng-show="$ctrl.story.place === 'mountains'">
+                 <img src="/images/moon-icon.png" ng-show="$ctrl.story.place === 'outerSpace'">
         </div>
     </section>
 

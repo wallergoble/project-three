@@ -107,14 +107,6 @@ body {
   height: 55px;
 }
 
-#storyShowBackBtn {
-  padding: 10px;
-  font-size: 55%;
-  text-align: center;
-  vertical-align: center;
-  height:55px;
-}
-
 #homeBtn{
   width: 52px;
   height: 52px;
@@ -138,25 +130,29 @@ body {
 #titleSection {
   width: 99%;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .showSection .textSide {
-  /*height: 100px;*/
   float: left;
   width: 49%;
+  margin-right: 1%;
 }
 
 .showSection .imageSide {
-  /*height: 100px;*/
   float: right;
   width: 49%;
+  margin-left: 1%;
 }
 
 .showSection {
-  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
   margin: 2px;
   border: 1px solid black;
-  vertical-align: center;
+  vertical-align: middle;
 }
 
 #endSection {

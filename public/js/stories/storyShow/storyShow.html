@@ -41,6 +41,36 @@
                 <img src="/images/sunset-icon.png">
             </div>
         </section>
+    <section id="animalSection" class="card-panel">
+
+        <div class="textSide">
+            <h4>{{$ctrl.story.name}} the {{$ctrl.story.animal}} </h4>
+        </div>
+        <div class="imageSide">
+                 <img src="/images/black-cat-icon.png" ng-show="$ctrl.story.animal === 'cat'">
+                 <img src="/images/brown-dog-icon.png" ng-show="$ctrl.story.animal === 'dog'">
+                 <img src="/images/rabbit-icon.png" ng-show="$ctrl.story.animal === 'bunny'">
+        </div>
+    </section>
+
+    <section id="placeSection" class="card-panel">
+        <div class="textSide">
+            <h4> went to the {{$ctrl.story.place}} </h4>
+        </div>
+        <div class="imageSide">
+                 <img src="/images/Beach-icon.png" ng-show="$ctrl.story.place === 'beach'">
+                 <img src="/images/Mountain-icon.png" ng-show="$ctrl.story.place === 'mountain'">
+                 <img src="/images/Moon-icon.png" ng-show="$ctrl.story.place === 'outerSpace'">
+        </div>
+    </section>
+
+    <section id="fillerSection" class="card-panel">
+        <div class="textSide">
+            <h4> and had a great time with all their friends </h4>
+        </div>
+        <div class="imageSide">
+        </div>
+    </section>
 
         <section id="endSection">
             <div>

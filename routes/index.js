@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-
 router.post('/signup', function(req, res) {
     User.register(new User({username: req.body.username }),
                             req.body.password,
@@ -26,7 +25,6 @@ router.post('/signup', function(req, res) {
             });
         });
 });
-
 
 router.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
@@ -57,6 +55,4 @@ router.get('/logout', function(req, res) {
         status: 'Bye!'
     });
 });
-
-
 module.exports = router;

@@ -1,7 +1,7 @@
 <navbar></navbar>
 
+<h3 class="storyIndexHeader"> {{$ctrl.username}}'s Stories </h3>
 <div id="storyList">
-<!--<h1> {{$ctrl.username}}'s Stories </h1>-->
 <ul>
   <li class="card-panel"  id='singleStoryInList' ng-repeat="story in $ctrl.stories">
     <article>
@@ -14,6 +14,7 @@
   </li>
 </ul>
 </div>
+
 
 <div id="addStory">
   <a  ui-sref='storyNew'><img id='addStoryBtn' src="/images/addStoryBtn2.png"></a>

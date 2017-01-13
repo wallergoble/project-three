@@ -1,6 +1,7 @@
 # Story Book App
 
-Deployment: <a href="https://storyify.herokuapp.com">
+Deployment:
+<a href="https://storyify.herokuapp.com">
 
 <a href="https://trello.com/b/BC1sJOOj/wdi-project-3">
 Trello Board

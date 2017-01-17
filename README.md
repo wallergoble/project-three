@@ -30,5 +30,13 @@ Trello Board
 
 Our app is centered around children and an adult companion building a story through an interactive Angular interface. 
 
-## Git methodology
+## Future Development
+
+* Add an “authors” model so each user can handle multiple authors
+* Connect and share stories with other users
+* Share completed stories to Twitter and Facebook
+* Add educational element
+* Child-friendly UI 
+* Multiple story lines and additional characters to choose from
+
 

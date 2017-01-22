@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 router.post('/signup', function(req, res) {
     User.register(new User({username: req.body.username }),
                             req.body.password,
-                            function(err, account) {
+                            function(err, user) {
             if (err) {
                 return res.status(500).json({
                     err: err
@@ -57,10 +57,5 @@ router.get('/logout', function(req, res) {
     });
 });
 
-function isLoggedIn(req, res, next) {
-    if(req.isAuthenticated()){
-        return next();
-    }
-    res.redirect('/index');
-}
+
 module.exports = router;

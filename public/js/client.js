@@ -25,11 +25,11 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('storyIndex', {
 		url: '/my-library',
 		template: '<story-index></story-index>',
-		onEnter: function(Auth, $state){
-			if(!Auth.isLoggedIn()) {
-				$state.go('index',{});
-			}
-		}
+		onEnter: function(Auth, $state) {
+            if (!Auth.isLoggedIn()) {
+                $state.go('index', {});
+            }
+        }
 	})
 
 	// Form to create a new story

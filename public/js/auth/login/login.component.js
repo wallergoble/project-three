@@ -13,14 +13,14 @@ myApp.component('login', {
                   username: this.user.username,
                   password: this.user.password
               })
-                  .then((response) => {
+              .then((response) => {
                   console.log('login response:', response);
                   // Logged in, redirect to stories
                   $state.go('storyIndex');
-          })
-          .catch(err => {
+              })
+              .catch(err => {
                   this.errors.login = err.message;
-          });
+              });
           }
       };
   }

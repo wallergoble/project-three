@@ -15,7 +15,7 @@ myApp.component('signup', {
                         password: this.user.password
                     })
                         .then(() => {
-                        // Account created, redirect to todos
+                        // Account created, redirect story index
                         $state.go('storyIndex');
                 })
                 .catch(err => {
@@ -32,10 +32,4 @@ myApp.component('signup', {
             }
         };
     }
-
 });
-
-
-
-
-

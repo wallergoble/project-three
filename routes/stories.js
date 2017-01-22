@@ -16,10 +16,14 @@ function makeError(res, message, status) {
 // INDEX
 // get all the story and return as JSON data
 router.get('/', function(req, res, next) {
+  // let currentUser = req.user;
+  // console.log(currentUser._id);
+  // console.log(stories._id);
   console.log('about to find some stories...');
-  Story.find().sort('-createdAt')
+    Story.find({user: req.user}).sort('-createdAt')
   .then(function(stories) {
-    res.json(stories);
+stories && stories.user && stories.user.equals(req.user._id);
+      res.json(stories);
   })
   .catch(function(err) {
     return next(err);
@@ -33,7 +37,8 @@ router.post('/', function(req, res, next) {
     title: req.body.title,
     name: req.body.name,
     animal: req.body.animal,
-    place: req.body.place
+    place: req.body.place,
+    user:  req.user
   });
   story.save()
   .then(function(savedStory) {
@@ -60,7 +65,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 // UPDATE
-router.put('/:id',  function(req, res, next) {
+router.put('/:id', function(req, res, next) {
   Story.findById(req.params.id)
   .then(function(story) {
     if (!story) return next(makeError(res, 'Document not found', 404));
@@ -89,12 +94,5 @@ router.delete('/:id', function(req, res, next) {
        }
    });
 });
-
-function isLoggedIn(req, res, next) {
-    if(req.isAuthenticated()){
-        return next();
-    }
-    res.redirect('/login');
-}
 
 module.exports = router;

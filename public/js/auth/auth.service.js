@@ -17,6 +17,7 @@ myApp.service('Auth', [ '$http','$q',
             return $http.post('/login', credentials)
                     .then(res => {
                         currentUser = res.data.user;
+
                         console.log('currentUser:', currentUser);
                     })
                     .catch(err => {
@@ -35,7 +36,7 @@ myApp.service('Auth', [ '$http','$q',
         this.signup = function(user) {
             return $http.post('/signup', user)
                     .then(res => {
-                        currentUser = res.data;
+                        currentUser = res.data.user;
                     })
                     .catch(err => {
                         console.log('ERROR:', err);

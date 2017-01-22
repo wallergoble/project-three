@@ -6,6 +6,7 @@
     </a>
     <a class="brand-logo">Storyify </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li ng-show="$ctrl.Auth.isLoggedIn()" class="navbar-text">Signed in as {{$ctrl.Auth.getCurrentUserSync().username}}</li>
       <!--<li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyNew') }"><a ui-sref="storyNew">New</a></li>-->
       <!--<li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyIndex') }"<a ui-sref="storyIndex">All My Stories</a></li>-->
       <!--<li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('storyShow') }"><a ui-sref="storyShow">Show</a></li>-->

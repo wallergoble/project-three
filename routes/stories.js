@@ -19,10 +19,10 @@ router.get('/', function(req, res, next) {
   // let currentUser = req.user;
   // console.log(currentUser._id);
   // console.log(stories._id);
-  console.log('about to find some stories...');
+    console.log('about to find some stories...');
     Story.find({user: req.user}).sort('-createdAt')
   .then(function(stories) {
-stories && stories.user && stories.user.equals(req.user._id);
+      stories && stories.user && stories.user.equals(req.user._id);
       res.json(stories);
   })
   .catch(function(err) {
@@ -69,7 +69,6 @@ router.put('/:id', function(req, res, next) {
   Story.findById(req.params.id)
   .then(function(story) {
     if (!story) return next(makeError(res, 'Document not found', 404));
-    // if (!req.user._id.equals(story.user)) return next(makeError(res, 'Unauthorized', 401));
     story.title = req.body.title;
     story.name = req.body.name;
     story.animal = req.body.animal;

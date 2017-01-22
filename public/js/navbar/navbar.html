@@ -1,9 +1,9 @@
 <nav id="navbar">
   <div class="nav-wrapper">
     <a ui-sref='storyIndex'>
-        <img id='homeBtn' src="/images/512x512.png" alt="HTML tutorial">
-      <!--<a href='storyIndex' id='homeBtn'><i class="material-icons">home</i></a>-->
+        <img id='homeBtn' src="/images/512x512.png" ui-sref="storyIndex">
     </a>
+
     <a class="brand-logo">Storyify </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li ng-show="$ctrl.Auth.isLoggedIn()" class="navbar-text">Signed in as {{$ctrl.Auth.getCurrentUserSync().username}}</li>

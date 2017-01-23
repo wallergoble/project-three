@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 router.post('/signup', function(req, res) {
     User.register(new User({username: req.body.username }),
                             req.body.password,
-                            function(err, account) {
+                            function(err, user) {
             if (err) {
                 return res.status(500).json({
                     err: err
@@ -43,7 +43,8 @@ router.post('/login', function(req, res, next) {
                 });
             }
             res.status(200).json({
-                status: 'Login successful!'
+                status: 'Login successful!',
+                user: user
             });
         });
     })(req, res, next);
@@ -55,4 +56,6 @@ router.get('/logout', function(req, res) {
         status: 'Bye!'
     });
 });
+
+
 module.exports = router;

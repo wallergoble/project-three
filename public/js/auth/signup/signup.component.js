@@ -13,29 +13,17 @@ myApp.component('signup', {
                         // lastName: this.user.lastName,
                         username: this.user.username,
                         password: this.user.password
-                    })
-                        .then(() => {
-                        // Account created, redirect to todos
+                })
+                .then(() => {
+                    // Account created, redirect story index
                         $state.go('storyIndex');
                 })
                 .catch(err => {
-                //     err = err.data;
-                // this.errors = {};
-                // Update validity of form fields that match the mongoose errors
-            //     angular.forEach(err.errors, (error, field) => {
-            //         form[field].$setValidity('mongoose', false);
-            //     this.errors[field] = error.message;
-            // });
-                console.log(err);
+
+                   console.log(err);
 
                 });
             }
         };
     }
-
 });
-
-
-
-
-

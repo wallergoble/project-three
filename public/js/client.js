@@ -1,6 +1,6 @@
 'use strict'; // Keeps our code clean
 
-const myApp = angular.module('storyBook', ['ui.router'], ['ngAnimate']);
+const myApp = angular.module('storyBook', ['ui.router']);
 
 myApp.config(function($stateProvider, $urlRouterProvider) {
 

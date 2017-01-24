@@ -1,6 +1,8 @@
 # Story Book App
 
-Production Link: 
+<a href="https://storyify.herokuapp.com">
+Deployment Link
+</a>
 
 <a href="https://trello.com/b/BC1sJOOj/wdi-project-3">
 Trello Board
@@ -24,9 +26,20 @@ Trello Board
 * Heroku
 * Passport
 
+## Wireframe
+
+![Wireframe](public/images/WIREFRAME1.jpg)
+![Wireframe](public/images/WIREFRAME2.jpg)
+
 ## Mission Statement
 
 Our app is centered around children and an adult companion building a story through an interactive Angular interface. 
 
-## Git methodology
+## Future Development
 
+* Add an “authors” model so each user can handle multiple authors
+* Connect and share stories with other users
+* Share completed stories to Twitter and Facebook
+* Add educational element
+* Child-friendly UI 
+* Multiple story lines and additional characters to choose from

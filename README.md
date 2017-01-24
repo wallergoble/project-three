@@ -28,10 +28,13 @@ Trello Board
 
 ## Wireframe
 
-![Wireframe]<img src="public/images/WIREFRAME1.jpg">
-![Wireframe]<img src="public/images/WIREFRAME2.jpg">
+![Wireframe](public/images/WIREFRAME1.jpg)
+![Wireframe](public/images/WIREFRAME2.jpg)
 
-
+<!--
+ <img src="public/images/WIREFRAME1.jpg">
+ <img src="public/images/WIREFRAME2.jpg">
+-->
 
 ## Mission Statement
 

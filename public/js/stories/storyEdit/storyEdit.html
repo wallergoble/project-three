@@ -12,17 +12,7 @@
         <h6>Animal: {{$ctrl.story.animal}} </h6>
         <br>
         <h6>Place: {{$ctrl.story.place}} </h6>
-        Progress bar
-        <div class="progress">
-            <div class="determinate"
-                 ng-class="{ true: '.noProgress' }[$ctrl.story.title ===  '']"
-                 ng-class="{ true: '.fourthProgress' }[$ctrl.story.title !==  '']"
-                 ng-class="{ true: '.halfProgress' }[$ctrl.story.name !==  '']"
-                 ng-class="{ true: '.threeFourthsProgress' }[$ctrl.story.animal !==  '']"
-                 ng-class="{ true: '.fullProgress' }[$ctrl.story.place !==  '']">
-            </div>
-        </div>
-    </div>
+</div>
 
 <div class="storyEditcontainer">
 <h1 id="storyEditHeader">Edit Your Story!</h1>
@@ -68,8 +58,8 @@
         <label for="mountainRadio">Mountains</label>
       </div>
       <div>
-        <input name="place" type="radio" id="outerSpaceRadio" ng-model="$ctrl.story.place" value="outerSpace" />
-        <label for="outerSpaceRadio">Outer Space</label>
+        <input name="place" type="radio" id="outerSpaceRadio" ng-model="$ctrl.story.place" value="moon" />
+        <label for="outerSpaceRadio">The Moon</label>
       </div>
     </div>
 

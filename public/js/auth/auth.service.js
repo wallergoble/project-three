@@ -1,5 +1,3 @@
-console.log('hello from auth services');
-
 myApp.service('Auth', [ '$http','$q',
     function($http, $q) {
 
@@ -17,8 +15,6 @@ myApp.service('Auth', [ '$http','$q',
             return $http.post('/login', credentials)
                     .then(res => {
                         currentUser = res.data.user;
-
-                        console.log('currentUser:', currentUser);
                     })
                     .catch(err => {
                         console.log('ERROR:', err);
@@ -45,4 +41,3 @@ myApp.service('Auth', [ '$http','$q',
         };
 
 }]);
-

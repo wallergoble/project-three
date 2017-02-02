@@ -22,7 +22,6 @@ myApp.service('storyService', function($http) {
 
   // Delete a single story by ID
   this.delete = function(story) {
-    console.log('we are deleting something');
     return $http.delete('/api/stories/' + story._id);
   };
 });

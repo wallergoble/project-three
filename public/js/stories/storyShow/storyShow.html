@@ -37,7 +37,7 @@
         <section class="card-panel">
             <div class="textSide">
                 <h4> On the way to the {{$ctrl.story.place}}, {{$ctrl.story.name}} met
-                    {{$ctrl.randomNameOne}}, who was also a {{$ctrl.story.animal}}
+                    {{$ctrl.story.friendOne}}, who was also a {{$ctrl.story.animal}}
                 </h4>
             </div>
             <div class="imageSide">
@@ -49,12 +49,12 @@
 
         <section class="card-panel">
             <div class="textSide">
-                <h4> At the {{$ctrl.story.place}}, {{$ctrl.story.name}} and {{$ctrl.randomNameOne}}
+                <h4> At the {{$ctrl.story.place}}, {{$ctrl.story.name}} and {{$ctrl.story.friendOne}}
                     met a
                     <span ng-show="$ctrl.story.place === 'beach'">whale</span>
                     <span ng-show="$ctrl.story.place === 'mountain'">bird</span>
                     <span ng-show="$ctrl.story.place === 'moon'">space cow</span>
-                    named {{$ctrl.randomNameTwo}}
+                    named {{$ctrl.story.friendTwo}}
                 </h4>
             </div>
             <div class="imageSide">
@@ -77,8 +77,8 @@
 
         <section class="card-panel">
             <div class="textSide">
-                <h4> {{$ctrl.story.name}}, {{$ctrl.randomNameOne}}, and
-                    {{$ctrl.randomNameTwo}} are still friends to this day.
+                <h4> {{$ctrl.story.name}}, {{$ctrl.story.friendOne}}, and
+                    {{$ctrl.story.friendTwo}} are still friends to this day.
                 </h4>
             </div>
         </section>

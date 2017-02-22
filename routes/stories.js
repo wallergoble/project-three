@@ -4,7 +4,8 @@ var express = require('express');
 var router = express.Router();
 
 
-var Story = require('../models/story');
+var newStory = require('../models/story').newStory;
+var Story = require('../models/story').Model;
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -33,7 +34,7 @@ router.get('/', function(req, res, next) {
 // NEW
 router.post('/', function(req, res, next) {
   console.log('hello from post router');
-  let story = new Story({
+  let story = newStory({
     title: req.body.title,
     name: req.body.name,
     animal: req.body.animal,
